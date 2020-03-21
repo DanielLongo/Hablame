@@ -4,32 +4,40 @@ import Header from "../components/header";
 import {Button, Row} from "antd";
 import NumericInput from "../components/number_input";
 import MicTest from "../components/mic_test";
+import NewMic from "../components/new_mic";
 class ConversationIntro extends Component {
     constructor(props) {
         super(props);
         this.state = { value: ''};
         this.onClick = this.onClick.bind(this)
+        // this.onChange = this.onChange.bind(this)
     }
 
     onChange = value => {
         this.setState({ value });
+        if (value < 4 && value >= 0) {
+            this.props.updateActivityIndex(Math.trunc(value) - 1) // -1 because index at
+        }
     };
 
     onClick() {
+        if (this.state.value > 4) {
+            alert("Given prompt code invalid. Starting Random Activity.")
+        }
         this.props.handleDone()
     }
 
     render() {
         return (
             <div>
+                <Header/>
                 <p
-                    style={{fontWeight:"bold", fontSize:20, marginTop:"4%"}}
+                    style={{fontWeight:"bold", fontSize:20, marginTop:"1%"}}
                 >
-                    Free Response Conversation
+                    Interpersonal Speaking
                 </p>
                 <div style={{fontSize:17}}>
                     <p>If you have a prompt code enter it now. Otherwise, the section will be randomly selected.</p>
-                    <p>Warning: The activity will start immediately after clicking start</p>
                 </div>
                 <div
                     style={{textAlign:"center", marginLeft:"38%"}}
@@ -40,7 +48,7 @@ class ConversationIntro extends Component {
                     </Row>
                 </div>
                 <MicTest/>
-                <Button type={"danger"} style={{marginTop:"2%", width:100}} onClick={this.onClick}><p style={{fontSize:16}}>Start</p></Button>
+                <Button type={"danger"} style={{marginTop:"1%", width:100}} onClick={this.onClick}><p style={{fontSize:16}}>Start</p></Button>
             </div>
         )
     }

@@ -12,12 +12,14 @@ class PraticeConversation extends Component {
         super(props);
         this.showActivity = this.showActivity.bind(this)
         this.showCountdown = this.showCountdown.bind(this)
+        this.updateActivityIndex = this.updateActivityIndex.bind(this)
     }
 
     state = {
         showIntro : true,
         showCountdown : false,
-        showActivity :false
+        showActivity :false,
+        activityIndex : Math.trunc(Math.random() * (4)) // 4 because there are currently 4 recordings
     };
 
     showCountdown() {
@@ -32,16 +34,22 @@ class PraticeConversation extends Component {
         this.setState({
             showIntro : false,
             showCountdown : false,
-            showActivity :true
+            showActivity : true
+        })
+    }
+
+    updateActivityIndex(newIndex) {
+        this.setState({
+            activityIndex : newIndex
         })
     }
 
     render() {
         return (
             <div>
-                {this.state.showIntro && <ConversationIntro handleDone={this.showCountdown}/>}
+                {this.state.showIntro && <ConversationIntro handleDone={this.showCountdown} updateActivityIndex={this.updateActivityIndex}/>}
                 {this.state.showCountdown && <Countdown handleDone={this.showActivity}/>}
-                {this.state.showActivity && <SpeakingActivity/>}
+                {this.state.showActivity && <SpeakingActivity activityIndex={this.state.activityIndex}/>}
                 <CustomFooter/>
             </div>
         )

@@ -19,27 +19,24 @@ class Home extends Component {
                >Select Activity</p>
                 <p
                     style={{
-                        marginTop:"-1%"
+                        marginTop:"-1.5%"
                     }}
-                >Presenting Practice Coming Soon!</p>
-                <Row
-                    style={{
-                        marginTop:"1%"
+                >Presentational Speaking Coming Soon!</p>
+            <div
+                style={{display: "flex",
+                    position: 'absolute', left: '50%',
+                    transform: 'translate(-50%, 0)',
                     }}
-                >
-                    <Col span={8}/>
-                    <Col span={3}
-                    >
-                    <ActivityButton
-                        text={"Practice Conversation"}/>
-                    </Col>
-                    <Col span={2}/>
-                    <Col span={3}
-                    >
-                    <ActivityButton
-                        text={"Practice Presenting"} disabled={true}/>
-                    </Col>
-                </Row>
+            >
+                <div>
+                        <ActivityButton
+                            text={"Interpersonal Speaking"} route={"conversation"}/>
+                </div>
+                <div style={{marginLeft:"4%"}}>
+                        <ActivityButton
+                            style={{width:"15%"}} text={"Presentational Speaking"} route={"presentation"} disabled={true}/>
+                </div>
+            </div>
             </div>
                 <div
                 >

@@ -11,18 +11,19 @@ class ActivityButton extends Component {
     }
 
     handleButtonClicked () {
-        this.props.history.push('/conversation')
+        this.props.history.push('/' + this.props.route)
     }
     render() {
         return (
             <div>
                 <Button disabled={this.props.disabled} type={"secondary"}
-                    style={{width:200, height:200}}
+                    style={{width:250, height:250, borderColor:"#fedd64", borderWidth:2}}
                         onClick={this.handleButtonClicked}
                 ><p
                     style={{
                         fontSize:16,
-                        fontWeight:"bold"
+                        fontWeight:"bold",
+                        textAlign: 'center'
                     }}
                 >{this.props.text}</p></Button>
             </div>

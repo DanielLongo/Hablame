@@ -28,10 +28,10 @@ class CustomFooter extends Component {
                 <div style={style}>
                     <p
                         style={{marginTop:"-.5%"}}
-                    >Please contact daniel@hablame.org</p>
+                    >Please contact support@hablame.org</p>
                     <p style={{marginTop:"-.8%"}}
                     />
-                    <p>Created By Daniel Longo 2020</p>
+                    <p>Created by Daniel Longo 2020</p>
                 </div>
             </div>
         )
