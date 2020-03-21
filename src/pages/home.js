@@ -21,7 +21,7 @@ class Home extends Component {
                     style={{
                         marginTop:"-1.5%"
                     }}
-                >Presentational Speaking Coming Soon!</p>
+                >Live Speaking Coming Soon!</p>
             <div
                 style={{display: "flex",
                     position: 'absolute', left: '50%',
@@ -34,7 +34,11 @@ class Home extends Component {
                 </div>
                 <div style={{marginLeft:"4%"}}>
                         <ActivityButton
-                            style={{width:"15%"}} text={"Presentational Speaking"} route={"presentation"} disabled={true}/>
+                            style={{width:"15%"}} text={"Presentational Speaking"} route={"presentation"} disabled={false}/>
+                </div>
+                <div style={{marginLeft:"4%"}}>
+                    <ActivityButton
+                        style={{width:"15%"}} text={"Live Speaking"} disabled={true}/>
                 </div>
             </div>
             </div>
