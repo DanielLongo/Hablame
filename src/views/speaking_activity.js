@@ -7,6 +7,7 @@ import ring from "../components/ring.mp3";
 import Sound from "react-sound";
 import Mic from "../components/mic";
 import {ReactMic} from "react-mic";
+import Header from "../components/header";
 const twenty = "https://www.dropbox.com/s/udjk2wv59akwaz3/20v2.mp3?raw=1";
 const sixty = "https://www.dropbox.com/s/6on2inazleuvoq0/60.mp3?raw=1";
 // const sixty = twenty;
@@ -198,6 +199,7 @@ class SpeakingActivity extends Component {
                 </div>
                 {this.state.done &&
                 <div>
+                    <Header/>
                     <p>Your Recording</p>
                     <audio src={this.state.blobURL} controls="controls"/>
 
@@ -208,6 +210,7 @@ class SpeakingActivity extends Component {
                     {/*    Stop*/}
                     {/*</button>*/}
                     <p>Click the 3 dots above to open the download option</p>
+                    <a href={"https://hablame.org/"}><p>Practice another activity</p></a>
                 </div>}
                 <CustomFooter/>
             </div>

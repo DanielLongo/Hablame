@@ -7,13 +7,15 @@ import ring from "../components/ring.mp3";
 import Sound from "react-sound";
 import Mic from "../components/mic";
 import {ReactMic} from "react-mic";
-const fourMins = "https://www.dropbox.com/s/5xkbwxo6xumkrm7/presentation-4.mp3?raw=1";
-const start = "https://www.dropbox.com/s/9wq0qretl9iqda1/presentation-begin.mp3?raw=1";
+import Header from "../components/header";
+const twenty = "https://www.dropbox.com/s/udjk2wv59akwaz3/20v2.mp3?raw=1";
+const fourMins = "https://www.dropbox.com/s/4140z3h9ivne50g/fourv2.mp3?raw=1";
+const start = "https://www.dropbox.com/s/8bfyw7wjdiqcslz/startv2.mp3?raw=1";
 const twoMins = "https://www.dropbox.com/s/1va88hdki9kwi89/presentation-end.mp3?raw=1"
 const clips = [
     fourMins,
     start,
-    twoMins
+    twoMins,
 ];
 const prompts = [
     "./presentation_prompts/1.png",
@@ -30,6 +32,7 @@ class PresentingActivity extends Component {
     }
     state = {
         curActivityIndex : 0,
+        soundUrl : clips[0],
         isRecording: false,
         isBlocked : false,
         micActive : false, // tells when to change mic color
@@ -96,17 +99,21 @@ class PresentingActivity extends Component {
     }
 
     handleFinishedPlaying() {
+        console.log("FINISHED PLAYING")
        if (this.state.curRecordingIndex === 0) {
            // just finished prep 4 mins
            this.setState({
-               curRecordingIndex : 1
+               curRecordingIndex : 1,
+               soundUrl : clips[1],
            })
        }
 
        else if (this.state.curRecordingIndex === 1) {
            // just finished intro
+           this.start()
            this.setState({
                curRecordingIndex : 2,
+               soundUrl : clips[2],
                isRecording: true,
                micActive : true,
                startRecording : true,
@@ -115,6 +122,7 @@ class PresentingActivity extends Component {
 
        else if (this.state.curRecordingIndex === 2) {
            // finished activity
+           this.stop()
            this.setState({
                micActive : false,
                showPrompt : false,
@@ -150,13 +158,15 @@ class PresentingActivity extends Component {
                     {this.state.showPrompt && <img src={prompts[this.state.curActivityIndex]}/>}
                 </div>
                 <div>
-                    {this.state.startRecording && <ReactMic record={true} className="sound-wave" mimeType='audio/mp3' strokeColor="#ff5757" backgroundColor="#ffffff" />}
+                    {(this.state.startRecording && (!this.state.done)) && <ReactMic record={true} className="sound-wave" mimeType='audio/mp3' strokeColor="#ff5757" backgroundColor="#ffffff" />}
                 </div>
                 {this.state.done &&
                 <div>
+                    <Header/>
                     <p>Your Recording</p>
                     <audio src={this.state.blobURL} controls="controls"/>
                     <p>Click the 3 dots above to open the download option</p>
+                    <a href={"https://hablame.org/"}><p>Practice another activity</p></a>
                 </div>}
                 <CustomFooter/>
             </div>
