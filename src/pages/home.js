@@ -4,7 +4,6 @@ import Header from "../components/header";
 import ActivityButton from "../components/activity_button";
 import {Row, Col} from 'antd'
 import CustomFooter from "../components/custom_footer";
-
 class Home extends Component {
     render() {
         return (

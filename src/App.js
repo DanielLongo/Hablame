@@ -9,7 +9,12 @@ import {
 } from "react-router-dom";
 import PraticeConversation from "./pages/pratice_conversation";
 import PraticePresentation from "./pages/practice_presentation";
-
+import ReactGA from 'react-ga';
+function initializeReactGA() {
+    ReactGA.initialize('UA-115296983-2');
+    ReactGA.pageview('/');
+}
+initializeReactGA()
 function App() {
   return (
     <div className="App">

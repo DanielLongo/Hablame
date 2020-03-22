@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import 'antd/dist/antd.css';
 import {Button} from "antd";
+import ReactGA from 'react-ga';
 import {
     withRouter
 } from 'react-router-dom'
@@ -11,6 +12,10 @@ class ActivityButton extends Component {
     }
 
     handleButtonClicked () {
+        ReactGA.event({
+            category: 'User',
+            action: 'started ' + this.props.route
+        });
         this.props.history.push('/' + this.props.route)
     }
     render() {
