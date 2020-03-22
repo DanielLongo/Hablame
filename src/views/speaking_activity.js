@@ -202,7 +202,8 @@ class SpeakingActivity extends Component {
                 {this.state.done &&
                 <div>
                     <Header/>
-                    <p>Your Recording</p>
+                    <p style={{fontSize:18}}>Your Recording</p>
+                    <audio src={this.state.blobURL} controls="controls"/>
                     <div style={{marginTop:"1%", marginBottom:"1%"}}>
                         <a download={"converse_task_" + (this.state.curActivityIndex + 1)} href={this.state.blobURL}><Button shape="round" type={"danger"} icon={<DownloadOutlined/>}>Download Recording</Button></a>
                     </div>
