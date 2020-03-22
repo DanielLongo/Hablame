@@ -8,14 +8,19 @@ import Sound from "react-sound";
 import Mic from "../components/mic";
 import {ReactMic} from "react-mic";
 import Header from "../components/header";
+import {Button} from "antd";
+import { DownloadOutlined } from '@ant-design/icons';
 const twenty = "https://www.dropbox.com/s/udjk2wv59akwaz3/20v2.mp3?raw=1";
 const fourMins = "https://www.dropbox.com/s/4140z3h9ivne50g/fourv2.mp3?raw=1";
 const start = "https://www.dropbox.com/s/8bfyw7wjdiqcslz/startv2.mp3?raw=1";
 const twoMins = "https://www.dropbox.com/s/1va88hdki9kwi89/presentation-end.mp3?raw=1"
 const clips = [
-    fourMins,
-    start,
-    twoMins,
+    // fourMins,
+    // start,
+    // twoMins,
+    twenty,
+    twenty,
+    twenty
 ];
 const prompts = [
     "./presentation_prompts/1.png",
@@ -163,10 +168,12 @@ class PresentingActivity extends Component {
                 {this.state.done &&
                 <div>
                     <Header/>
-                    <p>Your Recording</p>
+                    <p style={{fontSize:18}}>Your Recording</p>
                     <audio src={this.state.blobURL} controls="controls"/>
-                    <p>Click the 3 dots above to open the download option</p>
-                    <a href={"https://hablame.org/"}><p>Practice another activity</p></a>
+                    <div style={{marginTop:"1%", marginBottom:"1%"}}>
+                        <a download={"present_task_" + (this.state.curActivityIndex + 1)} href={this.state.blobURL}><Button shape="round" type={"danger"} icon={<DownloadOutlined/>}>Download Recording</Button></a>
+                    </div>
+                    <a href={"https://hablame.org/"}><p>Practice Another Activity</p></a>
                 </div>}
                 <CustomFooter/>
             </div>

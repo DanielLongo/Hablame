@@ -15,6 +15,10 @@ class PraticeConversation extends Component {
         this.updateActivityIndex = this.updateActivityIndex.bind(this)
     }
 
+    componentDidMount() {
+        document.title = "Hablame - Conversation"
+    }
+
     state = {
         showIntro : true,
         showCountdown : false,

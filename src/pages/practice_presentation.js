@@ -15,7 +15,9 @@ class PraticePresentation extends Component {
         this.updateActivityIndex = this.updateActivityIndex.bind(this)
         this.showInstructions = this.showInstructions.bind(this)
     }
-
+    componentDidMount() {
+        document.title = "Hablame - Presentation"
+    }
     state = {
         showIntro : true,
         showInstructions : false,

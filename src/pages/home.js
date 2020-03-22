@@ -5,6 +5,9 @@ import ActivityButton from "../components/activity_button";
 import {Row, Col} from 'antd'
 import CustomFooter from "../components/custom_footer";
 class Home extends Component {
+    componentDidMount() {
+        document.title = "Hablame"
+    }
     render() {
         return (
             <div>
@@ -23,7 +26,7 @@ class Home extends Component {
                 >Live Speaking Coming Soon!</p>
             <div
                 style={{display: "flex",
-                    position: 'absolute', left: '50%',
+                    position: 'absolute', left: '48%',
                     transform: 'translate(-50%, 0)',
                     }}
             >
@@ -31,11 +34,11 @@ class Home extends Component {
                         <ActivityButton
                             text={"Interpersonal Speaking"} route={"conversation"}/>
                 </div>
-                <div style={{marginLeft:"4%"}}>
+                <div style={{marginLeft:"4%", marginRight:"4%"}}>
                         <ActivityButton
                             style={{width:"15%"}} text={"Presentational Speaking"} route={"presentation"} disabled={false}/>
                 </div>
-                <div style={{marginLeft:"4%"}}>
+                <div>
                     <ActivityButton
                         style={{width:"15%"}} text={"Live Speaking"} route={"live"} disabled={true}/>
                 </div>

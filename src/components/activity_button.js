@@ -33,12 +33,12 @@ class ActivityButton extends Component {
                         onClick={this.handleButtonClicked}
                 ><p
                     style={{
-                        fontSize:16,
+                        fontSize:18,
                         fontWeight:"bold",
                         textAlign: 'center',
                     }}
                 >{this.props.text}</p>
-                    <img style={{width:80}} src={pictures[this.props.route]}/>
+                    <img style={{width:120}} src={pictures[this.props.route]}/>
                 </Button>
             </div>
         )

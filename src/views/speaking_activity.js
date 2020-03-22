@@ -8,6 +8,7 @@ import Sound from "react-sound";
 import Mic from "../components/mic";
 import {ReactMic} from "react-mic";
 import Header from "../components/header";
+import {Button} from "antd";
 const twenty = "https://www.dropbox.com/s/udjk2wv59akwaz3/20v2.mp3?raw=1";
 const sixty = "https://www.dropbox.com/s/6on2inazleuvoq0/60.mp3?raw=1";
 // const sixty = twenty;
@@ -123,7 +124,7 @@ class SpeakingActivity extends Component {
         console.log("finished playing A");
         console.log(this.state);
         console.log("finished playing B");
-        if (this.state.curRecordingIndex === 1 && (this.state.twentyNext === true)) {
+        if (this.state.curRecordingIndex === 0 && (this.state.sixtyNext === false)) {
             this.start()
             // alert("start")
             console.log("START RECORDING")
@@ -210,7 +211,7 @@ class SpeakingActivity extends Component {
                     {/*    Stop*/}
                     {/*</button>*/}
                     <p>Click the 3 dots above to open the download option</p>
-                    <a href={"https://hablame.org/"}><p>Practice another activity</p></a>
+                    <a href={"https://hablame.org/"}><Button shape="round" type={"danger"} >Practice Another Activity</Button></a>
                 </div>}
                 <CustomFooter/>
             </div>
