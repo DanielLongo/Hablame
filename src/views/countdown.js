@@ -4,6 +4,7 @@ import { Player } from 'video-react';
 import "video-react/dist/video-react.css";
 import beepSound from './my-beep.mp3';
 import Sound from 'react-sound'
+import {Alert} from "antd";
 
 const styles = {
     textAlign: "center"
@@ -22,6 +23,8 @@ class Countdown extends Component {
 
     render() {
         return (
+            <div>
+            <Alert type="success"  message={"Starting Activity " + (this.props.activityIndex + 1)}/>
             <div style={styles}>
                 <img src={"countdown.gif"}/>
                 <Sound
@@ -29,6 +32,7 @@ class Countdown extends Component {
                     playStatus={Sound.status.PLAYING}
                     onFinishedPlaying={this.handleSongFinishedPlaying}
                 />
+            </div>
             </div>
 
         );

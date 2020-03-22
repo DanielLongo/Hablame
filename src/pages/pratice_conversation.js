@@ -48,7 +48,7 @@ class PraticeConversation extends Component {
         return (
             <div>
                 {this.state.showIntro && <ConversationIntro handleDone={this.showCountdown} updateActivityIndex={this.updateActivityIndex}/>}
-                {this.state.showCountdown && <Countdown handleDone={this.showActivity}/>}
+                {this.state.showCountdown && <Countdown handleDone={this.showActivity} activityIndex={this.state.activityIndex}/>}
                 {this.state.showActivity && <SpeakingActivity activityIndex={this.state.activityIndex}/>}
                 <CustomFooter/>
             </div>

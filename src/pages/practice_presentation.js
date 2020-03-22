@@ -62,7 +62,7 @@ class PraticePresentation extends Component {
             <div>
                 {this.state.showIntro && <PresentationIntro handleDone={this.showInstructions} updateActivityIndex={this.updateActivityIndex}/>}
                 {this.state.showInstructions && <PresentationInstructions handleDone={this.showCountdown}/>}
-                {this.state.showCountdown && <Countdown handleDone={this.showActivity}/>}
+                {this.state.showCountdown && <Countdown handleDone={this.showActivity} activityIndex={this.state.activityIndex}/>}
                 {this.state.showActivity && <PresentingActivity activityIndex={this.state.activityIndex}/>}
                 <CustomFooter/>
             </div>
