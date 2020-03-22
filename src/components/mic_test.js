@@ -67,7 +67,7 @@ export class MicTest extends React.Component {
                     backgroundColor="#ffffff" />
             </div>
                 <div>
-                    <Button onClick={this.onClick}>Test Audio and Mic</Button>
+                    <Button shape="round" onClick={this.onClick}>Test Audio and Mic</Button>
                 </div>
             </div>
 

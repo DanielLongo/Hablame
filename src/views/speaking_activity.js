@@ -123,7 +123,7 @@ class SpeakingActivity extends Component {
         console.log("finished playing A");
         console.log(this.state);
         console.log("finished playing B");
-        if (this.state.curRecordingIndex === 2 && (this.state.twentyNext === true)) {
+        if (this.state.curRecordingIndex === 1 && (this.state.twentyNext === true)) {
             this.start()
             // alert("start")
             console.log("START RECORDING")
@@ -144,7 +144,7 @@ class SpeakingActivity extends Component {
                 soundUrl : sixty,
                 sixtyNext : false,
                 micActive : false,
-                curRecordingIndex : this.state.curRecordingIndex + 1,
+                // curRecordingIndex : this.state.curRecordingIndex + 1,
                 showPrompt : true,
                 startRecording: false,
             })

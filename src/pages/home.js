@@ -37,7 +37,7 @@ class Home extends Component {
                 </div>
                 <div style={{marginLeft:"4%"}}>
                     <ActivityButton
-                        style={{width:"15%"}} text={"Live Speaking"} disabled={true}/>
+                        style={{width:"15%"}} text={"Live Speaking"} route={"live"} disabled={true}/>
                 </div>
             </div>
             </div>

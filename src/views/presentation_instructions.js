@@ -18,7 +18,7 @@ class PresentationInstructions extends Component {
                 <img
                     src="presentation_instructions.png"/>
                 </div>
-                <Button type={"danger"} onClick={this.props.handleDone}>Begin Task</Button>
+                <Button shape="round" type={"danger"} onClick={this.props.handleDone}>Begin Task</Button>
             </div>
 
         )

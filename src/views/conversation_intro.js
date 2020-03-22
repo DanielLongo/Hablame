@@ -44,11 +44,11 @@ class ConversationIntro extends Component {
                 >
                     <Row>
                         <p style={{marginRight:"1%", marginTop:12, fontSize:16, fontWeight:'regular'}}
-                        >Prompt Code (Optional):</p>   <NumericInput style={{ width: 120 }} value={this.state.value} onChange={this.onChange} />
+                        >Prompt Code (Optional):</p>   <NumericInput shape="round" style={{ width: 120 }} value={this.state.value} onChange={this.onChange} />
                     </Row>
                 </div>
                 <MicTest/>
-                <Button type={"danger"} style={{marginTop:"1%", width:100}} onClick={this.onClick}><p style={{fontSize:16}}>Start</p></Button>
+                <Button shape="round" type={"danger"} style={{marginTop:"1%", width:100}} onClick={this.onClick}><p style={{fontSize:16}}>Start</p></Button>
             </div>
         )
     }

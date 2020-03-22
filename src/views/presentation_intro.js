@@ -48,7 +48,7 @@ class PresentationIntro extends Component {
                     </Row>
                 </div>
                 <MicTest/>
-                <Button type={"danger"} style={{marginTop:"1%", width:100}} onClick={this.onClick}><p style={{fontSize:16}}>Start</p></Button>
+                <Button shape="round" type={"danger"} style={{marginTop:"1%", width:100}} onClick={this.onClick}><p style={{fontSize:16}}>Start</p></Button>
             </div>
         )
     }

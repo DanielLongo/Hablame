@@ -5,6 +5,13 @@ import ReactGA from 'react-ga';
 import {
     withRouter
 } from 'react-router-dom'
+import "./activity_button.css"
+
+const pictures = {
+    "presentation" : "present.png",
+    "conversation" : "converse.png",
+    "live" : "live.png"
+}
 class ActivityButton extends Component {
     constructor(props) {
         super(props);
@@ -21,16 +28,18 @@ class ActivityButton extends Component {
     render() {
         return (
             <div>
-                <Button disabled={this.props.disabled} type={"secondary"}
-                    style={{width:250, height:250, borderColor:"#fedd64", borderWidth:2}}
+                <Button class="one" disabled={this.props.disabled} type={"secondary"}
+                        style={{width:250, height:250, borderColor:"#fedd64", borderWidth:2, backgroundColor:"light-grey"}}
                         onClick={this.handleButtonClicked}
                 ><p
                     style={{
                         fontSize:16,
                         fontWeight:"bold",
-                        textAlign: 'center'
+                        textAlign: 'center',
                     }}
-                >{this.props.text}</p></Button>
+                >{this.props.text}</p>
+                    <img style={{width:80}} src={pictures[this.props.route]}/>
+                </Button>
             </div>
         )
     }
