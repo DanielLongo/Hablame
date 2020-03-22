@@ -15,12 +15,9 @@ const fourMins = "https://www.dropbox.com/s/4140z3h9ivne50g/fourv2.mp3?raw=1";
 const start = "https://www.dropbox.com/s/8bfyw7wjdiqcslz/startv2.mp3?raw=1";
 const twoMins = "https://www.dropbox.com/s/1va88hdki9kwi89/presentation-end.mp3?raw=1"
 const clips = [
-    // fourMins,
-    // start,
-    // twoMins,
-    twenty,
-    twenty,
-    twenty
+    fourMins,
+    start,
+    twoMins,
 ];
 const prompts = [
     "./presentation_prompts/1.png",
