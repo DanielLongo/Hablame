@@ -6,6 +6,7 @@ import Recorder from 'react-mp3-recorder'
 import ring from "../components/ring.mp3";
 import Sound from "react-sound";
 import Mic from "../components/mic";
+import { DownloadOutlined } from '@ant-design/icons';
 import {ReactMic} from "react-mic";
 import Header from "../components/header";
 import {Button} from "antd";
@@ -202,16 +203,10 @@ class SpeakingActivity extends Component {
                 <div>
                     <Header/>
                     <p>Your Recording</p>
-                    <audio src={this.state.blobURL} controls="controls"/>
-
-                    {/*<button onClick={this.start}>*/}
-                    {/*    Record*/}
-                    {/*</button>*/}
-                    {/*<button onClick={this.stop} disabled={!this.state.isRecording}>*/}
-                    {/*    Stop*/}
-                    {/*</button>*/}
-                    <p>Click the 3 dots above to open the download option</p>
-                    <a href={"https://hablame.org/"}><Button shape="round" type={"danger"} >Practice Another Activity</Button></a>
+                    <div style={{marginTop:"1%", marginBottom:"1%"}}>
+                        <a download={"converse_task_" + (this.state.curActivityIndex + 1)} href={this.state.blobURL}><Button shape="round" type={"danger"} icon={<DownloadOutlined/>}>Download Recording</Button></a>
+                    </div>
+                    <a href={"https://hablame.org/"}><p>Practice Another Activity</p></a>
                 </div>}
                 <CustomFooter/>
             </div>
