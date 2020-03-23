@@ -17,13 +17,16 @@ class PraticeConversation extends Component {
 
     componentDidMount() {
         document.title = "Hablame - Conversation"
+        this.setState({
+            activityIndex : Math.trunc(Math.random() * (4))
+        })
     }
 
     state = {
         showIntro : true,
         showCountdown : false,
         showActivity :false,
-        activityIndex : Math.trunc(Math.random() * (4)) // 4 because there are currently 4 recordings
+        activityIndex : 0 // 4 because there are currently 4 recordings
     };
 
     showCountdown() {

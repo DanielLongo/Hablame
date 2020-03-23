@@ -106,7 +106,7 @@ class SpeakingActivity extends Component {
 
     componentDidMount() {
         this.setState({
-            soundUrl : activities[this.state.curActivityIndex][this.state.curRecordingIndex],
+            soundUrl : activities[this.props.activityIndex][this.state.curRecordingIndex],
             curActivityIndex : this.props.activityIndex
         });
         navigator.getUserMedia({ audio: true },

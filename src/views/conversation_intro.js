@@ -15,13 +15,13 @@ class ConversationIntro extends Component {
 
     onChange = value => {
         this.setState({ value });
-        if (value < 4 && value >= 0) {
+        if (value <= 4 && value > 0) {
             this.props.updateActivityIndex(Math.trunc(value) - 1) // -1 because index at
         }
     };
 
     onClick() {
-        if (this.state.value > 4) {
+        if (this.state.value > 4 || this.state.value < 1) {
             alert("Given prompt code invalid. Starting Random Activity.")
         }
         this.props.handleDone()
