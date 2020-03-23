@@ -7,6 +7,12 @@ import CustomFooter from "../components/custom_footer";
 import ConversationIntro from "../views/conversation_intro";
 import Countdown from "../views/countdown";
 import SpeakingActivity from "../views/speaking_activity";
+import ReactGA from "react-ga";
+function initializeReactGA() {
+    ReactGA.initialize('UA-115296983-2');
+    ReactGA.pageview('/conversation');
+}
+initializeReactGA()
 class PraticeConversation extends Component {
     constructor(props) {
         super(props);

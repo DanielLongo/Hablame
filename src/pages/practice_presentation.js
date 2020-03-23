@@ -7,6 +7,12 @@ import CustomFooter from "../components/custom_footer";
 import PresentationIntro from "../views/presentation_intro";
 import PresentationInstructions from "../views/presentation_instructions";
 import PresentingActivity from "../views/presenting_activity";
+import ReactGA from "react-ga";
+function initializeReactGA() {
+    ReactGA.initialize('UA-115296983-2');
+    ReactGA.pageview('/presentation');
+}
+initializeReactGA()
 class PraticePresentation extends Component {
     constructor(props) {
         super(props);
