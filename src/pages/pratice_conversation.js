@@ -37,17 +37,17 @@ class PraticeConversation extends Component {
 
     showCountdown() {
         this.setState({
-            showIntro : false,
             showCountdown : true,
+            showIntro : false,
             showActivity : false
         })
     }
 
     showActivity() {
         this.setState({
+            showActivity : true,
             showIntro : false,
-            showCountdown : false,
-            showActivity : true
+            showCountdown : false
         })
     }
 
