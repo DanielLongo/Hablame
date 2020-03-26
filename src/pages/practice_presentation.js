@@ -8,6 +8,10 @@ import PresentationIntro from "../views/presentation_intro";
 import PresentationInstructions from "../views/presentation_instructions";
 import PresentingActivity from "../views/presenting_activity";
 import ReactGA from "react-ga";
+import {Alert} from "antd";
+const { detect } = require('detect-browser');
+const browser = detect();
+
 function initializeReactGA() {
     ReactGA.initialize('UA-115296983-2');
     ReactGA.pageview('/presentation');
@@ -66,8 +70,17 @@ class PraticePresentation extends Component {
     }
 
     render() {
+        if (browser.name === "safari") {
+            this.alert = (<Alert
+                message="Browser Error"
+                description="Safari is not supported. Please use a different web browser."
+                type="error"
+                showIcon
+            />)
+        }
         return (
             <div>
+                {this.alert}
                 {this.state.showIntro && <PresentationIntro handleDone={this.showInstructions} updateActivityIndex={this.updateActivityIndex}/>}
                 {this.state.showInstructions && <PresentationInstructions handleDone={this.showCountdown}/>}
                 {this.state.showCountdown && <Countdown handleDone={this.showActivity} activityIndex={this.state.activityIndex}/>}

@@ -2,15 +2,27 @@ import React, {Component} from 'react';
 import 'antd/dist/antd.css';
 import Header from "../components/header";
 import ActivityButton from "../components/activity_button";
-import {Row, Col} from 'antd'
+import {Row, Col, Alert} from 'antd'
 import CustomFooter from "../components/custom_footer";
+const { detect } = require('detect-browser');
+const browser = detect();
+
 class Home extends Component {
     componentDidMount() {
         document.title = "Hablame"
     }
     render() {
+        if (browser.name === "safari") {
+            this.alert = (<Alert
+                message="Browser Error"
+                description="Safari is not supported. Please use a different web browser."
+                type="error"
+                showIcon
+            />)
+        }
         return (
             <div>
+                {this.alert}
             <div>
                <Header/>
                <p
