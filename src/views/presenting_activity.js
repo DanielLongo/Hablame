@@ -63,7 +63,7 @@ class PresentingActivity extends Component {
 
     start = () => {
         if (this.state.isBlocked) {
-            alert("Audio Permission Denied")
+            alert("Audio Permission Denied. Please Allow Microphone Access. The activity will not work without microphone access.")
             console.log('Permission Denied');
         } else {
             Mp3Recorder
