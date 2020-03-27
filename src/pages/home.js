@@ -3,6 +3,7 @@ import 'antd/dist/antd.css';
 import Header from "../components/header";
 import ActivityButton from "../components/activity_button";
 import {Row, Col, Alert} from 'antd'
+import '../App.css';
 import CustomFooter from "../components/custom_footer";
 const { detect } = require('detect-browser');
 const browser = detect();
@@ -21,10 +22,14 @@ class Home extends Component {
             />)
         }
         return (
-            <div>
+            <div style={{overflow:"hidden"}}>
+            <div className={"background"}/>
                 {this.alert}
             <div>
-               <Header/>
+                <div>
+<div style={{marginTop:"2%", marginBottom:"-2%"}}>
+                    <Header/>
+                </div>
                <p
                    style={{
                        fontWeight:"bold",
@@ -60,6 +65,7 @@ class Home extends Component {
                 >
                     <CustomFooter/>
                 </div>
+            </div>
             </div>
         )
     }
