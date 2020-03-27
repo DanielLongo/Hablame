@@ -9,7 +9,7 @@ class Header extends Component {
                 <a href={"/"}>
                 <img
                     style={{width:300, position:"relative"}}
-                    src="logo.png"/>
+                    src="Hablame.png"/>
                 {/*    <div className={"image-blurred-edge"}/>*/}
                 </a>
             </div>
