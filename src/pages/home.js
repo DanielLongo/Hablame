@@ -30,17 +30,21 @@ class Home extends Component {
 <div style={{marginTop:"2%", marginBottom:"-2%"}}>
                     <Header/>
                 </div>
+                    <div style={{position:"relative", marginTop:"2%"}}>
                <p
                    style={{
                        fontWeight:"bold",
-                       fontSize:25
+                       fontSize:25,
                    }}
                >Select Activity</p>
                 <p
                     style={{
-                        marginTop:"-1.5%"
+                        marginTop:"-1.5%",
+                        position: ""
+
                     }}
                 >Live Speaking Coming Soon!</p>
+                    </div>
             <div
                 style={{display: "flex",
                     position: 'absolute', left: '48%',
