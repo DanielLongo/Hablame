@@ -11,7 +11,19 @@ import CustomFooter from "../components/custom_footer";
 const gridStyle = {
     width: '25%',
     textAlign: 'center',
+    color: "black",
+    fontWeight : "bold"
 };
+
+const gridStyleComingSoon = {
+    width: '25%',
+        textAlign: 'center',
+        color: "grey"
+}
+
+const cardStyle = {
+    marginTop : "0%",
+}
 class AccentIntro extends Component {
     constructor(props) {
         super(props);
@@ -33,25 +45,25 @@ class AccentIntro extends Component {
                     Pronunciation Practice
                 </p>
                 <div style={{fontSize:17}}>
-                    <p>Select an activity below.</p>
+                    <p>This activity using machine learning to evaluate pronunciation. Select an activity below.</p>
                 </div>
-                <Card title="Easy Words">
+                <Card style={cardStyle} title="Easy Words">
                     <a onClick={() => this.onClick(0)}><Card.Grid style={gridStyle}>Activity 1</Card.Grid></a>
-                    <Card.Grid style={gridStyle}>Activity 2</Card.Grid>
-                    <Card.Grid style={gridStyle}>Activity 3</Card.Grid>
-                    <Card.Grid style={gridStyle}>Activity 4</Card.Grid>
+                    <a><Card.Grid onClick={() => this.onClick(1)} style={gridStyle}>Activity 2</Card.Grid></a>
+                    <Card.Grid style={gridStyleComingSoon}>Coming Soon</Card.Grid>
+                    <Card.Grid style={gridStyleComingSoon}>Coming Soon</Card.Grid>
                 </Card>
-                <Card title="Medium Words">
-                    <Card.Grid style={gridStyle}>Activity 1</Card.Grid>
-                    <Card.Grid style={gridStyle}>Activity 2</Card.Grid>
-                    <Card.Grid style={gridStyle}>Activity 3</Card.Grid>
-                    <Card.Grid style={gridStyle}>Activity 4</Card.Grid>
+                <Card style={cardStyle} title="Medium Words">
+                    <a><Card.Grid onClick={() => this.onClick(2)} style={gridStyle}>Activity 1</Card.Grid></a>
+                    <a><Card.Grid onClick={() => this.onClick(3)}style={gridStyle}>Activity 2</Card.Grid></a>
+                    <Card.Grid style={gridStyleComingSoon}>Coming Soon</Card.Grid>
+                    <Card.Grid style={gridStyleComingSoon}>Coming Soon</Card.Grid>
                 </Card>
-                <Card title="Difficult Words">
-                    <Card.Grid style={gridStyle}>Activity 1</Card.Grid>
-                    <Card.Grid style={gridStyle}>Activity 2</Card.Grid>
-                    <Card.Grid style={gridStyle}>Activity 3</Card.Grid>
-                    <Card.Grid style={gridStyle}>Activity 4</Card.Grid>
+                <Card  style={cardStyle} title="Difficult Words">
+                    <a><Card.Grid onClick={() => this.onClick(4)}style={gridStyle}>Activity 1</Card.Grid></a>
+                    <a><Card.Grid onClick={() => this.onClick(5)} style={gridStyle}>Activity 2</Card.Grid></a>
+                    <Card.Grid style={gridStyleComingSoon}>Coming Soon</Card.Grid>
+                    <Card.Grid style={gridStyleComingSoon}>Coming Soon</Card.Grid>
                 </Card>
                 {/*<CustomFooter/>*/}
             </div>

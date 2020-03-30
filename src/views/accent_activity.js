@@ -1,25 +1,42 @@
 import React, {Component} from 'react';
 import MicRecorder from "mic-recorder-to-mp3";
-import {Button} from "antd";
+import {Button, Card} from "antd";
 import { ReactMic } from 'react-mic';
 import GradeAudio from "../components/grade_audio";
 import Recorder from "../components/react-recording/Recorder";
-const words = [
-    ["hablar", "hotel", "piano", "agua"]
+import Header from "../components/header";
+import Pdf from "react-to-pdf";
+let words = [
+    [ "añadir", "correr", "pero", "trabajar", "azul", "verde", "salir", "manejar"],
+    ["eneñar", "ciudad", "ojalá", "pregunta", "propósito", "siempre", "nunca", "nariz"],
+    ["sonrojado", "perro", "jamonero", "carro", "ahorrar", "propósito", "sonrojado", "descubir"],
+    ["triángulo", "desempeñar", "apoderarse", "aprovecharse", "pertenecer", "prórroga", "aburrido"],
+    ["irrumpir", "ferrocarril", "establecer", "esbirro", "trastorno", "balbucear"],
+    ["zurcir", "pingüino", "prórroga", "idiosincrasia", "ornitorrinco", "desarollando"]
 ]
+
+const ref = React.createRef();
+
+const capitalize = (s) => {
+    if (typeof s !== 'string') return ''
+    return s.charAt(0).toUpperCase() + s.slice(1)
+}
 
 const Mp3Recorder = new MicRecorder({ bitRate: 128 });
 class AccentActivity extends Component{
     constructor(props) {
         super(props);
+        this.attempts = 0
         this.curWords = words[this.props.activityIndex]
+        this.submitGrade = this.submitGrade.bind(this)
     }
 
     state = {
         index : 0,
         blobURL : '',
         finished_recording : false,
-        record: false
+        record: false,
+        pass : '-1'
     };
 
     componentDidMount() {
@@ -35,26 +52,6 @@ class AccentActivity extends Component{
         );
     }
 
-    startRecording = () => {
-        this.setState({
-            record: true
-        });
-    }
-
-    stopRecording = () => {
-        this.setState({
-            record: false
-        });
-    }
-
-    onStop = (recordedBlob) => {
-        console.log('recordedBlob is: ', recordedBlob);
-        this.setState({
-            blobURL : recordedBlob.blobURL,
-            finished_recording : true
-        })
-    }
-
     submitBlob = (recordedBlob) => {
         console.log('recordedBlob is: ', recordedBlob);
         this.setState({
@@ -63,51 +60,87 @@ class AccentActivity extends Component{
         })
     }
 
+    submitGrade = (grade) => {
+        // 0 fail, 1 pass
+        let newIndex = this.state.index + 1
+        let wordsLength = this.curWords.length
+        if (grade === 1) {
+            console.log("words before", words)
+            words = this.curWords.splice(this.state.index, 1)
+            newIndex = newIndex - 1;
+            console.log("words after", words)
+
+        }
+
+        if (this.curWords.length === 0) {
+            this.setState({
+                finished: true
+            })
+        }
+
+
+        if (this.state.index === wordsLength -1){
+            if (this.attempts === 3) {
+                this.setState({
+                    finished: true
+                })
+            }
+            this.attempts += 1
+            newIndex = 0
+        }
+        this.setState({
+            pass : grade
+        })
+        console.log("new index ", newIndex)
+        setTimeout(() => {
+            this.setState({
+                index : newIndex,
+                finished_recording : false,
+                pass : -1
+            }
+            )
+        }, 300);
+
+    }
+
+
     start = () => {
         if (this.state.isBlocked) {
             alert("Audio Permission Denied. Please Allow Microphone Access. The activity will not work without microphone access.")
             console.log('Permission Denied');
-        } else {
-            Mp3Recorder
-                .start()
-                .then(() => {
-                    this.setState({ isRecording: true });
-                }).catch((e) => console.error(e));
         }
     };
 
-    stop = () => {
-        Mp3Recorder
-            .stop()
-            .getMp3()
-            .then(([buffer, blob]) => {
-                const blobURL = URL.createObjectURL(blob)
-                this.setState({ blobURL: blobURL, finished_recording : true});
-            }).catch((e) => console.log(e));
-    };
-
     render() {
+        this.start()
+        const id = Math.trunc(Date.now() * Math.random())
         return (
             <div>
-                <p>{this.curWords[this.state.index]}</p>
-                {/*<Button onClick={this.start}>Start</Button>*/}
-                {/*<Button onClick={this.stop}>Stop</Button>*/}
-                <Recorder submitBlob={this.submitBlob}/>
-                {/*<div>*/}
-                {/*    <ReactMic*/}
-                {/*        record={this.state.record}*/}
-                {/*        className="sound-wave"*/}
-                {/*        onStop={this.onStop}*/}
-                {/*        onData={this.onData}*/}
-                {/*        strokeColor="#000000"*/}
-                {/*        backgroundColor="#FF4081" />*/}
-                {/*    <button onClick={this.startRecording} type="button">Start</button>*/}
-                {/*    <button onClick={this.stopRecording} type="button">Stop</button>*/}
-                {/*</div>*/}
-
-                {this.state.finished_recording && <GradeAudio blobURL={this.state.blobURL}/>}
-
-
+                <Header/>
+                <p style={{fontSize:20, fontWeight:"bold", marginTop:"2%"}}>Practice Pronunciation</p>
+                <p style={{fontSize:18}}>Say the word shown on the card. Then Click Stop Recording</p>
+                <p style={{fontSize:18}}>Attempts Remaining: {4 - this.attempts}</p>
+            <div style={{marginTop:"5%", marginLeft:"40%"}}>
+                {!this.state.finished && <Card style={{width:400, height:300, marginTop:"-3%"}}>
+                    <p style={{fontSize:50, fontWeight:"bold", marginTop:"4%", color:"red"}}>{capitalize(this.curWords[this.state.index])}</p>
+                    <div>
+                    {!this.state.finished_recording && <img style={{width:100}} src={"recording.gif"}/>}
+                    <p></p>
+                    {!this.state.finished_recording && <Recorder submitBlob={this.submitBlob}/>}
+                    {this.state.finished_recording && <GradeAudio submitGrade={this.submitGrade} blobURL={this.state.blobURL} targetWord={this.curWords[this.state.index]}/>}
+                    {this.state.pass === 1 && <img style={{width:180, marginTop:-75}} src={"check.png"}/>}
+                    {this.state.pass === 0 && <img style={{width:180, marginTop:-75}} src={"x.png"}/>}
+                    </div>
+                </Card>}
+                {this.state.finished  && <Card style={{width:500, height:500}}>
+                    <div ref={ref}>
+                        <p style={{fontSize:20, fontWeight:"bold", marginTop:"1%"}}>Activity {this.props.activityIndex + 1} Complete</p>
+                        <p style={{fontSize:20, fontWeight:"bold", marginTop:"1%"}}>Unique ID {id}</p>
+                    </div>
+                    <img style={{width:150}} src={"Complete.png"}/>
+                    <a style={{fontSize:16}} href={"https://hablame.org/"}>Practice Another Activity</a>
+                    </Card>}
+            </div>
             </div>
 
         )

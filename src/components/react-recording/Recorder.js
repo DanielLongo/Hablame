@@ -28,7 +28,9 @@ class Recorder extends Component {
             console.log(error);
         }
 
-        this.setState({ stream });
+        this.setState({ stream })
+        this.startRecord()
+        ;
     }
 
     startRecord() {
@@ -74,7 +76,7 @@ class Recorder extends Component {
 
 
         return (
-            <Button
+            <Button round
                 onClick={() => {
                     recording ? this.stopRecord() : this.startRecord();
                 }}

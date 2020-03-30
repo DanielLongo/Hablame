@@ -19,7 +19,9 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",
     "react-sound": "^1.2.0",
+    "react-to-pdf": "^0.0.10",
     "react-webcam-capture": "^1.2.1",
+    "recorder-js": "^1.0.7",
     "uifx": "^2.0.7",
     "video-react": "^0.14.1"
   },
