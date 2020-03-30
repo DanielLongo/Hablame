@@ -43,7 +43,7 @@ class Home extends Component {
                         position: ""
 
                     }}
-                >Pronunciation Practice</p>
+                >Pronunciation Practice New!</p>
                     </div>
             <div
                 style={{display: "flex",
