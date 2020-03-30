@@ -7,6 +7,7 @@ import ReactGA from "react-ga";
 import AccentIntro from "../views/accent_intro";
 import AccentActivity from "../views/accent_activity";
 import Recorder from "../components/react-recording/Recorder";
+import Countdown from "../views/countdown";
 const { detect } = require('detect-browser');
 const browser = detect();
 
@@ -31,9 +32,19 @@ class PraticeAccent extends Component {
 
     state = {
         showIntro : true,
-        showActivity :false,
+        showActivity : false,
+        showCountdown : false,
         activityIndex : 0 // 4 because there are currently 4 recordings
     };
+
+    showCountdown() {
+        this.setState({
+            showIntro : false,
+            showInstructions : false,
+            showCountdown : true,
+            showActivity : false
+        })
+    }
 
     showActivity() {
         this.setState({
@@ -52,7 +63,8 @@ class PraticeAccent extends Component {
     introFinished(activityIndex) {
         console.log("INtRO FINISHED")
         this.updateActivityIndex(activityIndex)
-        this.showActivity()
+        // this.showActivity()
+        this.showCountdown()
     }
 
     render() {
@@ -68,6 +80,7 @@ class PraticeAccent extends Component {
             <div>
                 {this.alert}
                 {this.state.showIntro && <AccentIntro introFinished={this.introFinished}/>}
+                {this.state.showCountdown && <Countdown activityIndex={this.state.activityIndex} handleDone={this.showActivity}/>}
                 {this.state.showActivity && <AccentActivity activityIndex={this.state.activityIndex}/>}
                 <CustomFooter/>
             </div>
