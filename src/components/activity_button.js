@@ -10,7 +10,7 @@ import "./activity_button.css"
 const pictures = {
     "presentation" : "present.png",
     "conversation" : "converse.png",
-    "live" : "live.png"
+    "accent" : "live.png"
 }
 class ActivityButton extends Component {
     constructor(props) {

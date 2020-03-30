@@ -10,6 +10,7 @@ import {
 import PraticeConversation from "./pages/pratice_conversation";
 import PraticePresentation from "./pages/practice_presentation";
 import ReactGA from 'react-ga';
+import PraticeAccent from "./pages/practice_accent";
 function initializeReactGA() {
     ReactGA.initialize('UA-115296983-2');
     ReactGA.pageview('/');
@@ -25,6 +26,9 @@ function App() {
                 </Route>
                 <Route path="/presentation">
                     <PraticePresentation />
+                </Route>
+                <Route path="/accent">
+                    <PraticeAccent />
                 </Route>
                 <Route path="/">
                     <Home />

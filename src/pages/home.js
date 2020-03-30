@@ -27,7 +27,7 @@ class Home extends Component {
                 {this.alert}
             <div>
                 <div>
-<div style={{marginTop:"2%", marginBottom:"-2%"}}>
+<div style={{marginBottom:"-2%"}}>
                     <Header/>
                 </div>
                     <div style={{position:"relative", marginTop:"2%"}}>
@@ -43,7 +43,7 @@ class Home extends Component {
                         position: ""
 
                     }}
-                >Live Speaking Coming Soon!</p>
+                >Live Speaking New</p>
                     </div>
             <div
                 style={{display: "flex",
@@ -61,7 +61,7 @@ class Home extends Component {
                 </div>
                 <div>
                     <ActivityButton
-                        style={{width:"15%"}} text={"Live Speaking"} route={"live"} disabled={true}/>
+                        style={{width:"15%"}} text={"Pronunciation Practice"} route={"accent"} disabled={false}/>
                 </div>
             </div>
             </div>
