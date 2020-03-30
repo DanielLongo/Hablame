@@ -43,7 +43,7 @@ class Home extends Component {
                         position: ""
 
                     }}
-                >Live Speaking New</p>
+                > </p>
                     </div>
             <div
                 style={{display: "flex",
