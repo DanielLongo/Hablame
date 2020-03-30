@@ -27,7 +27,7 @@ class PraticeConversation extends Component {
     componentDidMount() {
         document.title = "Hablame - Conversation"
         this.setState({
-            activityIndex : Math.trunc(Math.random() * (4))
+            activityIndex : Math.trunc(Math.random() * (7))
         })
     }
 

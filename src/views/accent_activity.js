@@ -7,12 +7,12 @@ import Recorder from "../components/react-recording/Recorder";
 import Header from "../components/header";
 import Pdf from "react-to-pdf";
 let words = [
-    [ "añadir", "correr", "pero", "trabajar", "azul", "verde", "salir", "manejar"],
-    ["eneñar", "ciudad", "ojalá", "pregunta", "propósito", "siempre", "nunca", "nariz"],
-    ["sonrojado", "perro", "jamonero", "carro", "ahorrar", "propósito", "sonrojado", "descubir"],
+    [ "añadir", "correr", "pero", "trabajar", "azul", "manejar", "manzana", "difícil"],
+    ["enseñar", "ciudad", "pregunta", "propósito", "siempre", "nunca", "nariz", "cuerpo"],
+    ["sonrojado", "perro", "jamonero", "carro", "ahorrar", "propósito", "alquilar", "descubir"],
     ["triángulo", "desempeñar", "apoderarse", "aprovecharse", "pertenecer", "prórroga", "aburrido"],
     ["irrumpir", "ferrocarril", "establecer", "esbirro", "trastorno", "balbucear"],
-    ["zurcir", "pingüino", "prórroga", "idiosincrasia", "ornitorrinco", "desarollando"]
+    ["zurcir", "pingüino", "prórroga", "idiosincrasia", "ornitorrinco", "ahorar"]
 ]
 
 const ref = React.createRef();
@@ -27,7 +27,9 @@ class AccentActivity extends Component{
     constructor(props) {
         super(props);
         this.attempts = 0
-        this.curWords = words[this.props.activityIndex]
+        this.curWords = words[this.props.activityIndex];
+        // alert(this.curWords)
+        // alert(words[props.activityIndex])
         this.submitGrade = this.submitGrade.bind(this)
     }
 
@@ -116,11 +118,11 @@ class AccentActivity extends Component{
         const id = Math.trunc(Date.now() * Math.random())
         return (
             <div>
-                <Header/>
+                {/*<Header/>*/}
                 <p style={{fontSize:20, fontWeight:"bold", marginTop:"2%"}}>Practice Pronunciation</p>
                 <p style={{fontSize:18}}>Say the word shown on the card. Then Click Stop Recording</p>
                 <p style={{fontSize:18}}>Attempts Remaining: {4 - this.attempts}</p>
-            <div style={{marginTop:"5%", marginLeft:"40%"}}>
+            <div style={{ marginTop: "4%", display: 'flex',  justifyContent:'center', alignItems:'center'}}>
                 {!this.state.finished && <Card style={{width:400, height:300, marginTop:"-3%"}}>
                     <p style={{fontSize:50, fontWeight:"bold", marginTop:"4%", color:"red"}}>{capitalize(this.curWords[this.state.index])}</p>
                     <div>

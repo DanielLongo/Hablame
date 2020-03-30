@@ -76,7 +76,7 @@ class Recorder extends Component {
 
 
         return (
-            <Button round
+            <Button shape={"round"}
                 onClick={() => {
                     recording ? this.stopRecord() : this.startRecord();
                 }}

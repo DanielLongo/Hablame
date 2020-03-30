@@ -34,6 +34,22 @@ const activities = [
         "https://www.dropbox.com/s/afvbxew2dkfr9zz/e.mp3?raw=1", "https://www.dropbox.com/s/9hd9dqk64f69tsy/f.mp3?raw=1",
         "https://www.dropbox.com/s/brl47el70y1qgi6/g.mp3?raw=1"
     ],
+    ["https://www.dropbox.com/s/dilzfwzzd3tmg7x/a.mp3?raw=1", "https://www.dropbox.com/s/hwslhf6nnapgj7w/b.mp3?raw=1",
+        "https://www.dropbox.com/s/gnx26bmtav1gi2y/c.mp3?raw=1", "https://www.dropbox.com/s/z6e7c9hx6ithms6/d.mp3?raw=1",
+        "https://www.dropbox.com/s/463aha6wy7pdg4z/e.mp3?raw=1", "https://www.dropbox.com/s/dh9mmo3lww3erts/f.mp3?raw=1",
+        "https://www.dropbox.com/s/brl47el70y1qgi6/g.mp3?raw=1"],
+
+    ["https://www.dropbox.com/s/dilzfwzzd3tmg7x/a.mp3?raw=1", "https://www.dropbox.com/s/4ugrmj9f9clkfv4/b.mp3?raw=1",
+        "https://www.dropbox.com/s/ty5iwi7kjnfj6vf/c.mp3?raw=1", "https://www.dropbox.com/s/vtqhtb0i79d6ymb/d.mp3?raw=1",
+        "https://www.dropbox.com/s/xzwfnoe49eizqc8/e.mp3?raw=1", "https://www.dropbox.com/s/3i8t20fx44hjdbo/f.mp3?raw=1",
+        "https://www.dropbox.com/s/5osk7w8niu91yhc/g0.mp3?raw=1",
+        "https://www.dropbox.com/s/brl47el70y1qgi6/g.mp3?raw=1"],
+
+    ["https://www.dropbox.com/s/dilzfwzzd3tmg7x/a.mp3?raw=1", "https://www.dropbox.com/s/kijusjct68pxh1t/b.mp3?raw=1",
+        "https://www.dropbox.com/s/zucb94vhvtc9unx/c.mp3?raw=1", "https://www.dropbox.com/s/wjej1vl1ehg9y9d/d.mp3?raw=1",
+        "https://www.dropbox.com/s/d5kblsw5w08y1hf/e.mp3?raw=1", "https://www.dropbox.com/s/654yu5yr0qpva2s/f.mp3?raw=1",
+        "https://www.dropbox.com/s/brl47el70y1qgi6/g.mp3?raw=1"]
+
 
     
 ];
@@ -41,7 +57,11 @@ const prompts = [
     "./prompts/1-prompt.png",
     "./prompts/2-prompt.png",
     "./prompts/3-prompt.png",
-    "./prompts/4-prompt.png"
+    "./prompts/4-prompt.png",
+    "./prompts/5-prompt.png",
+    "./prompts/6-prompt.png",
+    "./prompts/7-prompt.png",
+
 ]
 const Mp3Recorder = new MicRecorder({ bitRate: 128 });
 class SpeakingActivity extends Component {
@@ -130,6 +150,7 @@ class SpeakingActivity extends Component {
             // alert("start")
             console.log("START RECORDING")
         }
+        // if (this.state.curRecordingIndex === activities[this.state.curActivityIndex].length - 1 && (this.state.twentyNext === true)) {
         if (this.state.curRecordingIndex === 6 && (this.state.twentyNext === true)) {
             console.log("FINISHED ACTIVITY");
             // alert("done recording")

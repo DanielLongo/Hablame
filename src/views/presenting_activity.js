@@ -23,7 +23,8 @@ const prompts = [
     "./presentation_prompts/1.png",
     "./presentation_prompts/2.png",
     "./presentation_prompts/3.png",
-    "./presentation_prompts/4.png"
+    "./presentation_prompts/4.png",
+    "./presentation_prompts/5.png",
 ]
 const Mp3Recorder = new MicRecorder({ bitRate: 128 });
 class PresentingActivity extends Component {

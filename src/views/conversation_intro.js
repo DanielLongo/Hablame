@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import 'antd/dist/antd.css';
 import Header from "../components/header";
-import {Button, Row} from "antd";
+import {Alert, Button, Row} from "antd";
 import NumericInput from "../components/number_input";
 import MicTest from "../components/mic_test";
 import NewMic from "../components/new_mic";
@@ -15,13 +15,13 @@ class ConversationIntro extends Component {
 
     onChange = value => {
         this.setState({ value });
-        if (value <= 4 && value > 0) {
+        if (value <= 7 && value > 0) {
             this.props.updateActivityIndex(Math.trunc(value) - 1) // -1 because index at
         }
     };
 
     onClick() {
-        if (this.state.value > 4 || this.state.value < 1) {
+        if (this.state.value > 7 || this.state.value < 1) {
             alert("Given prompt code invalid. Starting Random Activity.")
         }
         this.props.handleDone()
@@ -30,6 +30,12 @@ class ConversationIntro extends Component {
     render() {
         return (
             <div>
+                <Alert
+                    message="For the best recording experience do not use headphones on this activity."
+                    type="warning"
+                    closable
+                    showIcon
+                />
                 <Header/>
                 <p
                     style={{fontWeight:"bold", fontSize:20, marginTop:"1%"}}
