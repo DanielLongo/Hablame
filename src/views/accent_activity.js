@@ -9,7 +9,7 @@ import Pdf from "react-to-pdf";
 let words = [
     [ "añadir", "correr", "llamar", "trabajar", "azul", "manejar", "manzana", "difícil"],
     ["enseñar", "ciudad", "pregunta", "propósito", "siempre", "nunca", "nariz", "cuerpo"],
-    ["sonrojado", "perro", "jamonero", "carro", "ahorrar", "propósito", "alquilar", "descubrir"],
+    ["sonrojado", "perro", "jamonero", "carro", "propósito", "alquilar", "descubrir"],
     ["triángulo", "desempeñar", "apoderarse", "aprovecharse", "pertenecer", "prórroga", "aburrido"],
     ["irrumpir", "ferrocarril", "establecer", "esbirro", "trastorno", "balbucear"],
     ["zurcir", "pingüino", "prórroga", "idiosincrasia", "ornitorrinco", "ahorar"]
