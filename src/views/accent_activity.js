@@ -101,7 +101,7 @@ class AccentActivity extends Component{
                 pass : -1
             }
             )
-        }, 500);
+        }, 300);
 
     }
 
