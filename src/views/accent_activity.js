@@ -7,7 +7,7 @@ import Recorder from "../components/react-recording/Recorder";
 import Header from "../components/header";
 import Pdf from "react-to-pdf";
 let words = [
-    [ "añadir", "correr", "pero", "trabajar", "azul", "manejar", "manzana", "difícil"],
+    [ "añadir", "correr", "llamar", "trabajar", "azul", "manejar", "manzana", "difícil"],
     ["enseñar", "ciudad", "pregunta", "propósito", "siempre", "nunca", "nariz", "cuerpo"],
     ["sonrojado", "perro", "jamonero", "carro", "ahorrar", "propósito", "alquilar", "descubir"],
     ["triángulo", "desempeñar", "apoderarse", "aprovecharse", "pertenecer", "prórroga", "aburrido"],
