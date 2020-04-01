@@ -22,7 +22,7 @@ class Home extends Component {
             />)
         }
         return (
-            <div style={{overflow:"hidden"}}>
+            <div style={{}}>
             <div className={"background"}/>
                 {this.alert}
             <div>
@@ -47,7 +47,7 @@ class Home extends Component {
 
 
                     }}
-                >Hover cursor over cards to view activity description. Interpersonal and Presentational speaking exercises <strong> allow <br/> students to download their audio recordings so that they may save them or submit them to teachers. </strong></p>
+                >Hover cursor over cards to view activity description. Interpersonal and presentational speaking exercises <strong> allow <br/> students to download their audio recordings so that they may save them or submit them to teachers. </strong></p>
                     </div>
             <div
                 style={{display: "flex",
