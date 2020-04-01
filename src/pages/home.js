@@ -58,6 +58,8 @@ class Home extends Component {
                 <div style={{marginLeft:"4%", marginRight:"4%"}}>
                         <ActivityButton
                             style={{width:"15%"}} text={"Presentational Speaking"} route={"presentation"} disabled={false}/>
+                    <p style={{fontSize:2}}><br/></p>
+                    <a style={{}} href={"/teachers"}>Information for Teachers</a>
                 </div>
                 <div>
                     <ActivityButton
@@ -65,8 +67,7 @@ class Home extends Component {
                 </div>
             </div>
             </div>
-                <div
-                >
+                <div>
                     <CustomFooter/>
                 </div>
             </div>

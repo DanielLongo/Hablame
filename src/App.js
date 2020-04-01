@@ -18,6 +18,7 @@ import {
     isMobile
 } from "react-device-detect";
 import CustomFooter from "./components/custom_footer";
+import InformationForTeachers from "./pages/information_for_teachers";
 
 function initializeReactGA() {
     ReactGA.initialize('UA-115296983-2');
@@ -38,6 +39,9 @@ function App() {
                         </Route>
                         <Route path="/accent">
                             <PraticeAccent />
+                        </Route>
+                        <Route path="/teachers">
+                            <InformationForTeachers/>
                         </Route>
                         <Route path="/">
                             <Home />
