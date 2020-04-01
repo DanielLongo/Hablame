@@ -43,7 +43,7 @@ class Home extends Component {
                         position: ""
 
                     }}
-                >Pronunciation Practice New!</p>
+                >Hover cursor over cards to view activity description.</p>
                     </div>
             <div
                 style={{display: "flex",
