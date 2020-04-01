@@ -40,15 +40,20 @@ class Home extends Component {
                 <p
                     style={{
                         marginTop:"-1.5%",
-                        position: ""
+                        position: 'absolute', left: '50%',
+                        transform: 'translate(-50%, 0)',
+                        fontSize : 15,
+                        width : "100%"
+
 
                     }}
-                >Hover cursor over cards to view activity description.</p>
+                >Hover cursor over cards to view activity description. Interpersonal and Presentational speaking exercises <strong> allow <br/> students to download their audio recordings so that they may save them or submit them to teachers. </strong></p>
                     </div>
             <div
                 style={{display: "flex",
                     position: 'absolute', left: '48%',
                     transform: 'translate(-50%, 0)',
+                    marginTop : 32
                     }}
             >
                 <div>
