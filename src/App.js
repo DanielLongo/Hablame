@@ -50,7 +50,7 @@ function App() {
                 <p style={{marginTop: "4%", fontSize:17, marginLeft:"2%", marginRight:"2%"}}
                 >Unfortunately, Hablame.org is not available on mobile devices. <strong>Please visit our website from a computer.</strong> For help please email support@hablame.org</p>
                 <p style={{marginTop: "10%", fontSize:23, marginLeft:"2%", marginRight:"2%", fontWeight:"bold"}}>What is Hablame?</p>
-                <p style={{marginTop: "0%", fontSize:17, marginLeft:"2%", marginRight:"2%"}}>Hablame.org is a free website dedicated to Spanish speaking practice. The site offers activities modeled after the AP Spanish exam including interpersonal and presentational speaking practice. The site also allows for students/learners to download their audio recordings so that they may save them or submit them to teachers. </p>
+                <p style={{marginTop: "0%", fontSize:17, marginLeft:"2%", marginRight:"2%"}}>Hablame.org is a free website dedicated to Spanish speaking practice. The site offers activities modeled after the AP Spanish exam including interpersonal and presentational speaking practice. <strong> The site also allows for students/learners to download their audio recordings so that they may save them or submit them to teachers. </strong></p>
                 <CustomFooter/>
             </MobileView>
         </div>
