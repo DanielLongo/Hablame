@@ -59,9 +59,8 @@ class ActivityButton extends Component {
                                 fontSize:18,
                                 fontWeight:"bold",
                                 textAlign: 'center',
-                            }}
-                            >{this.props.text}</p>
-                            <img style={{width:120}} src={pictures[this.props.route]}/>
+                            }}>{this.props.text}</p>
+                            <img style={{width:120, marginTop:15}} src={pictures[this.props.route]}/>
                             </div>
                         </div>
                         <div className="flip-card-back">
