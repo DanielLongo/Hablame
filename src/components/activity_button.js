@@ -25,10 +25,18 @@ class ActivityButton extends Component {
     }
 
     handleButtonClicked () {
-        ReactGA.event({
-            category: 'User',
-            action: 'started ' + this.props.route
-        });
+        if (this.props.isSpanish) {
+            ReactGA.event({
+                category: 'User',
+                action: 'started ' + this.props.route + ' Spanish'
+            });
+        }
+        else {
+            ReactGA.event({
+                category: 'User',
+                action: 'started ' + this.props.route + ' French'
+            });
+        }
         this.props.history.push('/' + this.props.route)
     }
 // <Button class="one" disabled={this.props.disabled} type={"secondary"}
