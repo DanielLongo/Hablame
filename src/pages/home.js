@@ -55,7 +55,7 @@ class Home extends Component {
                     </div>
             <div
                 style={{display: "flex",
-                    position: 'absolute', left: '48%',
+                    position: 'absolute', left: '48.5%',
                     transform: 'translate(-50%, 0)',
                     marginTop : 32
                     }}
