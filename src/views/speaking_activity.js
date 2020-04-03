@@ -13,6 +13,40 @@ import {Button} from "antd";
 const twenty = "https://www.dropbox.com/s/udjk2wv59akwaz3/20v2.mp3?raw=1";
 const sixty = "https://www.dropbox.com/s/6on2inazleuvoq0/60.mp3?raw=1";
 // const sixty = twenty;
+const activities_french = [
+    ["https://www.dropbox.com/s/inssb2zbsi1anwc/a.mp3?raw=1", "https://www.dropbox.com/s/o3ehisxrejs2gaz/b.mp3?raw=1",
+        "https://www.dropbox.com/s/l9ua9m8gyn9ommy/c.mp3?raw=1", "https://www.dropbox.com/s/m08pd4vslqb7356/d.mp3?raw=1",
+        "https://www.dropbox.com/s/v0uj9cqq4omark4/e.mp3?raw=1", "https://www.dropbox.com/s/pqgutex02s04e05/f.mp3?raw=1",
+        "https://www.dropbox.com/s/b136w9g0itrxgoo/g.mp3?raw=1"
+    ],
+    ["https://www.dropbox.com/s/inssb2zbsi1anwc/a.mp3?raw=1", "https://www.dropbox.com/s/5c2ol30easys6so/b.mp3?raw=1",
+        "https://www.dropbox.com/s/ld14e78dgju7y6j/c.mp3?raw=1", "https://www.dropbox.com/s/sonpsfaqwztruli/d.mp3?raw=1",
+        "https://www.dropbox.com/s/ykc9zx237225i22/e.mp3?raw=1", "https://www.dropbox.com/s/hjf3z1dhi3vl5kb/f.mp3?raw=1",
+        "https://www.dropbox.com/s/b136w9g0itrxgoo/g.mp3?raw=1"
+    ],
+    ["https://www.dropbox.com/s/inssb2zbsi1anwc/a.mp3?raw=1", "https://www.dropbox.com/s/fvjaj9ctka73y2d/b.mp3?raw=1",
+        "https://www.dropbox.com/s/4pzyc6kyzha8iqw/c.mp3?raw=1", "https://www.dropbox.com/s/jyxij8csm5581ir/d.mp3?raw=1",
+        "https://www.dropbox.com/s/16i0fqg350akz5q/e.mp3?raw=1", "https://www.dropbox.com/s/g7gagaelczqf3cj/f.mp3?raw=1",
+        "https://www.dropbox.com/s/b136w9g0itrxgoo/g.mp3?raw=1"
+    ],
+    ["https://www.dropbox.com/s/inssb2zbsi1anwc/a.mp3?raw=1", "https://www.dropbox.com/s/1d79mlgebswy1dn/b.mp3?raw=1",
+        "https://www.dropbox.com/s/pn2afqtbck10x3g/c.mp3?raw=1", "https://www.dropbox.com/s/o5ivpcqnkf18b3c/d.mp3?raw=1",
+        "https://www.dropbox.com/s/shjzfh320d2uvwj/e.mp3?raw=1", "https://www.dropbox.com/s/k39kd87lv3faohx/f.mp3?raw=1",
+        "https://www.dropbox.com/s/b136w9g0itrxgoo/g.mp3?raw=1"
+    ],
+    ["https://www.dropbox.com/s/inssb2zbsi1anwc/a.mp3?raw=1", "https://www.dropbox.com/s/ftpjue0npe61l6g/b.mp3?raw=1",
+        "https://www.dropbox.com/s/v8l2jxpkkiyywa4/c.mp3?raw=1", "https://www.dropbox.com/s/l41p04n8itx00pb/d.mp3?raw=1",
+        "https://www.dropbox.com/s/mt1aqqyqxwbqfud/e.mp3?raw=1", "https://www.dropbox.com/s/bawadj1tfhz9rqk/f.mp3?raw=1",
+        "https://www.dropbox.com/s/b136w9g0itrxgoo/g.mp3?raw=1"
+    ],
+    ["https://www.dropbox.com/s/inssb2zbsi1anwc/a.mp3?raw=1", "https://www.dropbox.com/s/nnq5fhh5klsg53h/b.mp3?raw=1",
+        "https://www.dropbox.com/s/88ubmpp13ys9hdh/c.mp3?raw=1", "https://www.dropbox.com/s/qyog48bvyx5ofmi/d.mp3?raw=1",
+        "https://www.dropbox.com/s/n14b5a8cqr5u2nv/e.mp3?raw=1", "https://www.dropbox.com/s/g3bapzph7i795ar/f.mp3?raw=1",
+        "https://www.dropbox.com/s/b136w9g0itrxgoo/g.mp3?raw=1"
+    ],
+
+]
+
 const activities = [
     ["https://www.dropbox.com/s/dilzfwzzd3tmg7x/a.mp3?raw=1", "https://www.dropbox.com/s/o7c8mg1h4y3j8ye/b.mp3?raw=1",
         "https://www.dropbox.com/s/0tp5mycimc5xqq8/c.mp3?raw=1", "https://www.dropbox.com/s/ls0mtzryyslo9jg/d.mp3?raw=1",
@@ -53,6 +87,16 @@ const activities = [
 
     
 ];
+
+const prompts_french = [
+    "./french/interpersonal_prompts/1.png",
+    "./french/interpersonal_prompts/2.png",
+    "./french/interpersonal_prompts/3.png",
+    "./french/interpersonal_prompts/4.png",
+    "./french/interpersonal_prompts/5.png",
+    "./french/interpersonal_prompts/6.png",
+];
+
 const prompts = [
     "./prompts/1-prompt.png",
     "./prompts/2-prompt.png",
@@ -62,7 +106,8 @@ const prompts = [
     "./prompts/6-prompt.png",
     "./prompts/7-prompt.png",
 
-]
+];
+
 const Mp3Recorder = new MicRecorder({ bitRate: 128 });
 class SpeakingActivity extends Component {
     constructor(props) {
@@ -84,6 +129,7 @@ class SpeakingActivity extends Component {
         done: false,
         downloadLinkUrl : '',
     }
+
 
     onStop(recordedBlob) {
         console.log('recordedBlob is: ', recordedBlob);
@@ -125,10 +171,24 @@ class SpeakingActivity extends Component {
     };
 
     componentDidMount() {
-        this.setState({
-            soundUrl : activities[this.props.activityIndex][this.state.curRecordingIndex],
-            curActivityIndex : this.props.activityIndex
-        });
+        this.activites = activities
+        if (this.props.isSpanish) {
+            this.setState({
+                soundUrl: activities[this.props.activityIndex][this.state.curRecordingIndex],
+                curActivityIndex: this.props.activityIndex
+            });
+        }
+        else {
+            this.activites = activities_french
+            let activityIndex = this.props.activityIndex;
+            if (this.props.activityIndex === 6) {
+                activityIndex = 5 // because french only has 6 prompts
+            }
+            this.setState({
+                soundUrl: activities_french[activityIndex][this.state.curRecordingIndex],
+                curActivityIndex: activityIndex
+            });
+        }
         navigator.getUserMedia({ audio: true },
             () => {
                 console.log('Permission Granted');
@@ -187,7 +247,7 @@ class SpeakingActivity extends Component {
             let curIndex = this.state.curRecordingIndex;
             this.setState({
                 startRecording: true,
-                soundUrl : activities[this.state.curActivityIndex][curIndex + 1],
+                soundUrl : this.activites[this.state.curActivityIndex][curIndex + 1],
                 curRecordingIndex : this.state.curRecordingIndex + 1,
                 micActive : false,
                 twentyNext : true,
@@ -215,7 +275,8 @@ class SpeakingActivity extends Component {
                     {(this.state.micActive && (!this.state.done)) && <img style={{width:150}} src={"active-mic.png"}/>}
                     {(!this.state.micActive && (!this.state.done)) && <img style={{width:150}} src={"inactive-mic.png"}/>}
                     </div>
-                    {this.state.showPrompt && <img src={prompts[this.state.curActivityIndex]}/>}
+                    {(this.state.showPrompt && this.props.isSpanish) && <img src={prompts[this.state.curActivityIndex]}/>}
+                    {(this.state.showPrompt && !this.props.isSpanish) && <img src={prompts_french[this.state.curActivityIndex]}/>}
                 </div>
                 <div>
                     {this.state.startRecording && <ReactMic record={true} className="sound-wave" mimeType='audio/mp3' strokeColor="#ff5757" backgroundColor="#ffffff" />}
@@ -228,7 +289,7 @@ class SpeakingActivity extends Component {
                     <div style={{marginTop:"1%", marginBottom:"1%"}}>
                         <a download={"converse_task_" + (this.state.curActivityIndex + 1)} href={this.state.blobURL}><Button shape="round" type={"danger"} icon={<DownloadOutlined/>}>Download Recording</Button></a>
                     </div>
-                    <a href={"https://hablame.org/"}><p>Practice Another Activity</p></a>
+                    <a href={"/"}><p>Practice Another Activity</p></a>
                 </div>}
                 <CustomFooter/>
             </div>

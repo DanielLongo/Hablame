@@ -12,11 +12,19 @@ import {Button} from "antd";
 import { DownloadOutlined } from '@ant-design/icons';
 const twenty = "https://www.dropbox.com/s/udjk2wv59akwaz3/20v2.mp3?raw=1";
 const fourMins = "https://www.dropbox.com/s/4140z3h9ivne50g/fourv2.mp3?raw=1";
+const fourMins_french = "https://www.dropbox.com/s/wg91lcq6hgqd4bb/four_mins.mp3?raw=1"
 const start = "https://www.dropbox.com/s/8bfyw7wjdiqcslz/startv2.mp3?raw=1";
+const start_french = "https://www.dropbox.com/s/ju58cwqibgfh9z5/start.mp3?raw=1";
 const twoMins = "https://www.dropbox.com/s/1va88hdki9kwi89/presentation-end.mp3?raw=1"
 const clips = [
     fourMins,
     start,
+    twoMins,
+];
+
+const clips_french = [
+    fourMins_french,
+    start_french,
     twoMins,
 ];
 const prompts = [
@@ -26,12 +34,28 @@ const prompts = [
     "./presentation_prompts/4.png",
     "./presentation_prompts/5.png",
 ]
+
+const prompts_french = [
+    "./french/comparison_prompts/1.png",
+    "./french/comparison_prompts/2.png",
+    "./french/comparison_prompts/3.png",
+    "./french/comparison_prompts/4.png",
+    "./french/comparison_prompts/5.png",
+]
+
 const Mp3Recorder = new MicRecorder({ bitRate: 128 });
 class PresentingActivity extends Component {
     constructor(props) {
         super(props);
         this.handleFinishedPlaying = this.handleFinishedPlaying.bind(this)
         this.onStop = this.onStop.bind(this)
+        this.clips = clips
+        this.prompts = prompts
+        console.log("herere", this.props.isSpanish)
+        if (!this.props.isSpanish) {
+            this.prompts = prompts_french
+            this.clips = clips_french
+        }
     }
     state = {
         curActivityIndex : 0,
@@ -87,7 +111,8 @@ class PresentingActivity extends Component {
 
     componentDidMount() {
         this.setState({
-            curActivityIndex : this.props.activityIndex
+            curActivityIndex : this.props.activityIndex,
+            soundUrl : this.clips[0]
         });
         navigator.getUserMedia({ audio: true },
             () => {
@@ -107,7 +132,7 @@ class PresentingActivity extends Component {
            // just finished prep 4 mins
            this.setState({
                curRecordingIndex : 1,
-               soundUrl : clips[1],
+               soundUrl : this.clips[1],
            })
        }
 
@@ -116,7 +141,7 @@ class PresentingActivity extends Component {
            this.start()
            this.setState({
                curRecordingIndex : 2,
-               soundUrl : clips[2],
+               soundUrl : this.clips[2],
                isRecording: true,
                micActive : true,
                startRecording : true,
@@ -158,7 +183,7 @@ class PresentingActivity extends Component {
                         {(this.state.micActive && (!this.state.done)) && <img style={{width:150}} src={"active-mic.png"}/>}
                         {(!this.state.micActive && (!this.state.done)) && <img style={{width:150}} src={"inactive-mic.png"}/>}
                     </div>
-                    {this.state.showPrompt && <img src={prompts[this.state.curActivityIndex]}/>}
+                    {this.state.showPrompt && <img src={this.prompts[this.state.curActivityIndex]}/>}
                 </div>
                 <div>
                     {(this.state.startRecording && (!this.state.done)) && <ReactMic record={true} className="sound-wave" mimeType='audio/mp3' strokeColor="#ff5757" backgroundColor="#ffffff" />}
@@ -171,7 +196,7 @@ class PresentingActivity extends Component {
                     <div style={{marginTop:"1%", marginBottom:"1%"}}>
                         <a download={"present_task_" + (this.state.curActivityIndex + 1)} href={this.state.blobURL}><Button shape="round" type={"danger"} icon={<DownloadOutlined/>}>Download Recording</Button></a>
                     </div>
-                    <a href={"https://hablame.org/"}><p>Practice Another Activity</p></a>
+                    <a href={"/"}><p>Practice Another Activity</p></a>
                 </div>}
                 <CustomFooter/>
             </div>

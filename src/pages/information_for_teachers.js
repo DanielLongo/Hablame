@@ -29,7 +29,7 @@ class InformationForTeachers extends Component {
         }
         return (
             <div>
-                <Header/>
+                <Header isSpanish={this.props.isSpanish}/>
                 <a style={{fontSize:15}} href={"/"}>Back to Activities Page</a>
                 <p style={{fontSize:22, fontWeight:"bold"}}>Information for Teachers</p>
                 <p>If you would like to add your own prompts please email daniel@hablame.org.</p>

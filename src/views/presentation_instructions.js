@@ -9,14 +9,19 @@ class PresentationInstructions extends Component {
     render() {
         return (
             <div>
-                <Header/>
+                <Header isSpanish={this.props.isSpanish}/>
                 <p
                     style={{fontWeight:"bold", fontSize:20, marginTop:"1%"}}>
                     Presentational Speaking
                 </p>
                 <div>
-                <img
+                    {this.props.isSpanish && <img
                     src="presentation_instructions.png"/>
+                    }
+                    {(!this.props.isSpanish) && <img
+                        src="french/presentation_instructions.png"/>
+                    }
+
                 </div>
                 <Button shape="round" type={"danger"} onClick={this.props.handleDone}>Begin Task</Button>
             </div>

@@ -30,7 +30,7 @@ class PresentationIntro extends Component {
     render() {
         return (
             <div>
-                <Header/>
+                <Header isSpanish={this.props.isSpanish}/>
                 <p
                     style={{fontWeight:"bold", fontSize:20, marginTop:"1%"}}
                 >

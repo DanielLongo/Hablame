@@ -38,7 +38,7 @@ class AccentIntro extends Component {
     render() {
         return (
             <div>
-                <Header/>
+                <Header isSpanish={true}/>
                 <p
                     style={{fontWeight:"bold", fontSize:20, marginTop:"1%"}}
                 >

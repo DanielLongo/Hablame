@@ -140,7 +140,7 @@ class AccentActivity extends Component{
                         <p style={{fontSize:20, fontWeight:"bold", marginTop:"1%"}}>Unique ID {id}</p>
                     </div>
                     <img style={{width:150}} src={"Complete.png"}/>
-                    <a style={{fontSize:16}} href={"https://hablame.org/"}>Practice Another Activity</a>
+                    <a style={{fontSize:16}} href={"/"}>Practice Another Activity</a>
                     </Card>}
             </div>
             </div>

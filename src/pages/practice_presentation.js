@@ -81,10 +81,10 @@ class PraticePresentation extends Component {
         return (
             <div>
                 {this.alert}
-                {this.state.showIntro && <PresentationIntro handleDone={this.showInstructions} updateActivityIndex={this.updateActivityIndex}/>}
-                {this.state.showInstructions && <PresentationInstructions handleDone={this.showCountdown}/>}
+                {this.state.showIntro && <PresentationIntro handleDone={this.showInstructions} updateActivityIndex={this.updateActivityIndex} isSpanish={this.props.isSpanish}/>}
+                {this.state.showInstructions && <PresentationInstructions handleDone={this.showCountdown} isSpanish={this.props.isSpanish}/>}
                 {this.state.showCountdown && <Countdown handleDone={this.showActivity} activityIndex={this.state.activityIndex}/>}
-                {this.state.showActivity && <PresentingActivity activityIndex={this.state.activityIndex}/>}
+                {this.state.showActivity && <PresentingActivity activityIndex={this.state.activityIndex}  isSpanish={this.props.isSpanish}/>}
                 <CustomFooter/>
             </div>
         )

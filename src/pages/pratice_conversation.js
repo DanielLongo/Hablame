@@ -72,9 +72,9 @@ class PraticeConversation extends Component {
         return (
             <div>
                 {this.alert}
-                {this.state.showIntro && <ConversationIntro handleDone={this.showCountdown} updateActivityIndex={this.updateActivityIndex}/>}
+                {this.state.showIntro && <ConversationIntro handleDone={this.showCountdown} updateActivityIndex={this.updateActivityIndex} isSpanish={this.props.isSpanish}/>}
                 {this.state.showCountdown && <Countdown handleDone={this.showActivity} activityIndex={this.state.activityIndex}/>}
-                {this.state.showActivity && <SpeakingActivity activityIndex={this.state.activityIndex}/>}
+                {this.state.showActivity && <SpeakingActivity activityIndex={this.state.activityIndex} isSpanish={this.props.isSpanish}/>}
                 <CustomFooter/>
             </div>
         )

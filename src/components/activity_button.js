@@ -43,25 +43,42 @@ class ActivityButton extends Component {
 // >{this.props.text}</p>
 // <img style={{width:120}} src={pictures[this.props.route]}/>
 // </Button>
+//     #002654 french
+//    #fedd64 spanish
+
     render() {
+        console.log("this.props.spanish", this.props)
         return (
             <div onClick={this.handleButtonClicked}>
                 <a>
                 <div className="flip-card">
                     <div className="flip-card-inner">
                         <div className="flip-card-front">
-                            <div class="one" disabled={this.props.disabled}
+                            { this.props.isSpanish && <div class="one" disabled={this.props.disabled}
                             style={{width:246, height:230, borderColor:"#fedd64", borderWidth:2, backgroundColor:"white"}}
                             onClick={this.handleButtonClicked}
                             ><p
-                            style={{
-                                marginTop: 14,
-                                fontSize:18,
-                                fontWeight:"bold",
-                                textAlign: 'center',
-                            }}>{this.props.text}</p>
-                            <img style={{width:120, marginTop:15}} src={pictures[this.props.route]}/>
-                            </div>
+                                style={{
+                                    marginTop: 14,
+                                    fontSize:18,
+                                    fontWeight:"bold",
+                                    textAlign: 'center',
+                                }}>{this.props.text}</p>
+                                <img style={{width:120, marginTop:15}} src={pictures[this.props.route]}/>
+                            </div>}
+                                {!this.props.isSpanish &&
+                                <div class="one" disabled={this.props.disabled}
+                                     style={{width:246, height:230, borderColor:"#002654", borderWidth:2, backgroundColor:"white"}}
+                                     onClick={this.handleButtonClicked}
+                                ><p
+                                    style={{
+                                        marginTop: 14,
+                                        fontSize:18,
+                                        fontWeight:"bold",
+                                        textAlign: 'center',
+                                    }}>{this.props.text}</p>
+                                    <img style={{width:120, marginTop:15}} src={pictures[this.props.route]}/>
+                                </div>}
                         </div>
                         <div className="flip-card-back">
                             <p

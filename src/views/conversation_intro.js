@@ -36,7 +36,7 @@ class ConversationIntro extends Component {
                     closable
                     showIcon
                 />
-                <Header/>
+                <Header isSpanish={this.props.isSpanish}/>
                 <p
                     style={{fontWeight:"bold", fontSize:20, marginTop:"1%"}}
                 >

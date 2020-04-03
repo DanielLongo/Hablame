@@ -9,6 +9,9 @@ const { detect } = require('detect-browser');
 const browser = detect();
 
 class Home extends Component {
+    constructor(props) {
+        super(props);
+    }
     componentDidMount() {
         document.title = "Hablame"
     }
@@ -28,7 +31,7 @@ class Home extends Component {
             <div>
                 <div>
 <div style={{marginBottom:"-2%"}}>
-                    <Header/>
+                    <Header  isSpanish={this.props.isSpanish}/>
                 </div>
                     <div style={{position:"relative", marginTop:"2%"}}>
                <p
@@ -48,6 +51,7 @@ class Home extends Component {
 
                     }}
                 >Hover cursor over cards to view activity description. Interpersonal and presentational speaking exercises <strong> allow <br/> students to download their audio recordings so that they may save them or submit them to teachers. </strong></p>
+                        <a style={{}} href={"/teachers"}><br/>Information for Teachers</a>
                     </div>
             <div
                 style={{display: "flex",
@@ -58,17 +62,18 @@ class Home extends Component {
             >
                 <div>
                         <ActivityButton
-                            text={"Interpersonal Speaking"} route={"conversation"}/>
+                            text={"Interpersonal Speaking"} route={"conversation"} isSpanish={this.props.isSpanish}/>
                 </div>
                 <div style={{marginLeft:"4%", marginRight:"4%"}}>
                         <ActivityButton
-                            style={{width:"15%"}} text={"Presentational Speaking"} route={"presentation"} disabled={false}/>
+                            style={{width:"15%"}} text={"Presentational Speaking"} route={"presentation"} disabled={false} isSpanish={this.props.isSpanish}/>
                     <p style={{fontSize:2}}><br/></p>
-                    <a style={{}} href={"/teachers"}>Information for Teachers</a>
                 </div>
                 <div>
+                    {this.props.isSpanish &&
                     <ActivityButton
-                        style={{width:"15%"}} text={"Pronunciation Practice"} route={"accent"} disabled={false}/>
+                        style={{width:"15%"}} text={"Pronunciation Practice"} route={"accent"} disabled={!this.props.isSpanish} isSpanish={this.props.isSpanish}/>
+                    }
                 </div>
             </div>
             </div>
