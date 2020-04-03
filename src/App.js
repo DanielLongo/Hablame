@@ -134,7 +134,7 @@ class App extends React.Component {
                         marginRight: "2%",
                         fontWeight: "bold"
                     }}>What is Parlefrancais?</p>
-                    <p style={{marginTop: "0%", fontSize: 17, marginLeft: "2%", marginRight: "2%"}}>Hablame.org is a
+                    <p style={{marginTop: "0%", fontSize: 17, marginLeft: "2%", marginRight: "2%"}}>Parlefrancais.org is a
                         free website dedicated to French speaking practice. The site offers activities modeled after
                         the AP Spanish exam including interpersonal and presentational speaking practice. <strong> The
                             site also allows for students/learners to download their audio recordings so that they may
