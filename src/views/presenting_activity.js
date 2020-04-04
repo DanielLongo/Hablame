@@ -33,6 +33,17 @@ const prompts = [
     "./presentation_prompts/3.png",
     "./presentation_prompts/4.png",
     "./presentation_prompts/5.png",
+    "./presentation_prompts/6.png",
+    "./presentation_prompts/7.png",
+    "./presentation_prompts/8.png",
+    "./presentation_prompts/9.png",
+    "./presentation_prompts/10.png",
+    "./presentation_prompts/11.png",
+    "./presentation_prompts/12.png",
+    "./presentation_prompts/13.png",
+    "./presentation_prompts/14.png",
+    "./presentation_prompts/15.png",
+    "./presentation_prompts/16.png",
 ]
 
 const prompts_french = [

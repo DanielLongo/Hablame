@@ -10,18 +10,25 @@ class PresentationIntro extends Component {
         super(props);
         this.state = { value: ''};
         this.onClick = this.onClick.bind(this)
+
+        if (this.props.isSpanish) {
+            this.limit = 15 + 1
+        }
+        else {
+            this.limit = 5
+        }
         // this.onChange = this.onChange.bind(this)
     }
 
     onChange = value => {
         this.setState({ value });
-        if (value <= 5 && value > 0) {
+        if (value <= this.limit && value > 0) {
             this.props.updateActivityIndex(Math.trunc(value) - 1) // -1 because index at
         }
     };
 
     onClick() {
-        if (this.state.value > 5 || this.state.value < 1) {
+        if (this.state.value > this.limit || this.state.value < 1) {
             alert("Given prompt code invalid. Starting Random Activity.")
         }
         this.props.handleDone()

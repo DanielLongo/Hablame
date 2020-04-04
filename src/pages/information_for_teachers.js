@@ -46,7 +46,7 @@ class InformationForTeachers extends Component {
                         <p>Prompt Code = 4 (2015 FRQ)</p>
                         <p>Prompt Code = 5 (2014 FRQ)</p>
                         <p>Prompt Code = 6 (2013 FRQ)</p>
-                        <p>Prompt Code = 7 (2012 FRQ)</p>
+                    {this.props.isSpanish && <p>Prompt Code = 7 (2012 FRQ)</p>}
                 </div>
                     <div style={{marginLeft:20}}>
                     <p>Presentational Speaking:</p>
@@ -55,6 +55,7 @@ class InformationForTeachers extends Component {
                         <p>Prompt Code = 3 (2016 FRQ)</p>
                         <p>Prompt Code = 4 (2015 FRQ)</p>
                         <p>Prompt Code = 5 (2014 FRQ)</p>
+                        {this.props.isSpanish && <a href={"https://docs.google.com/document/d/1Rt3mUxxXc86pDyOFfBja8G17eYun6p_z-70TypfDBzA/edit?usp=sharing"}>More prompt codes</a>}
                     </div>
                 </Row>
 

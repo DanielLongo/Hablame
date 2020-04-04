@@ -24,6 +24,12 @@ class PraticePresentation extends Component {
         this.showCountdown = this.showCountdown.bind(this)
         this.updateActivityIndex = this.updateActivityIndex.bind(this)
         this.showInstructions = this.showInstructions.bind(this)
+        if (this.props.isSpanish) {
+            this.limit = 15
+        }
+        else {
+            this.limit = 5
+        }
     }
     componentDidMount() {
         document.title = "Hablame - Presentation"
