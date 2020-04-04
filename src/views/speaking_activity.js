@@ -283,7 +283,7 @@ class SpeakingActivity extends Component {
                 </div>
                 {this.state.done &&
                 <div>
-                    <Header/>
+                    <Header isSpanish={this.props.isSpanish}/>
                     <p style={{fontSize:18}}>Your Recording</p>
                     <audio src={this.state.blobURL} controls="controls"/>
                     <div style={{marginTop:"1%", marginBottom:"1%"}}>
