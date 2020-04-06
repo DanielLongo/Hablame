@@ -51,7 +51,7 @@ class Home extends Component {
 
                     }}
                 >Hover cursor over cards to view activity description. Interpersonal and presentational speaking exercises <strong> allow <br/> students to download their audio recordings so that they may save them or submit them to teachers. </strong></p>
-                        <a style={{}} href={"/teachers"}><br/>Information for Teachers</a>
+                        <p><a style={{fontSize:15}} href={"/teachers"}><br/>Information for Teachers</a> and <a href={"https://youtu.be/w3t7BBBz1JQ"}>5 Minute Teacher Overview Video</a></p>
                     </div>
             <div
                 style={{display: "flex",
