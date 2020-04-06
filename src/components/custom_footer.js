@@ -28,10 +28,10 @@ class CustomFooter extends Component {
                 <div style={style}>
                     <p
                         style={{marginTop:"-.5%"}}
-                    >Please contact support@hablame.org | <a href={"https://hablame.org/"}>Hablame - Spanish</a> & <a href={"https://parlefrancais.org/"}>ParleFrancais - French</a></p>
+                    > <a href={"https://hablame.org/"}>Hablame - Spanish</a> & <a href={"https://parlefrancais.org/"}>ParleFrancais - French</a> | <a href={"privacy.html"}>Privacy Policy</a></p>
                     <p style={{marginTop:"-.8%"}}
                     />
-                    <p>Created by Daniel Longo 2020</p>
+                    <p> Please contact support@hablame.org | Created by Daniel Longo 2020</p>
                 </div>
             </div>
         )
