@@ -17,6 +17,7 @@ class Home extends Component {
     }
     render() {
         if (browser.name === "safari") {
+            alert("Safari is not supported. Please use a different web browser (Chrome, FireFox, Edge).")
             this.alert = (<Alert
                 message="Browser Error"
                 description="Safari is not supported. Please use a different web browser."
