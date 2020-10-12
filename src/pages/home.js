@@ -56,24 +56,30 @@ class Home extends Component {
                     </div>
             <div
                 style={{display: "flex",
-                    position: 'absolute', left: '48.5%',
+                    position: 'absolute', left: '46.5%',
                     transform: 'translate(-50%, 0)',
                     marginTop : 32
                     }}
             >
                 <div>
                         <ActivityButton
-                            text={"Interpersonal Speaking"} route={"conversation"} isSpanish={this.props.isSpanish}/>
+                            text={"Interpersonal Speaking"} route={"conversation"} isSpanish={this.props.isSpanish} borderColor={"#fedd64"}/>
                 </div>
                 <div style={{marginLeft:"4%", marginRight:"4%"}}>
                         <ActivityButton
-                            style={{width:"15%"}} text={"Presentational Speaking"} route={"presentation"} disabled={false} isSpanish={this.props.isSpanish}/>
+                            style={{width:"15%"}} text={"Presentational Speaking"} route={"presentation"} disabled={false} isSpanish={this.props.isSpanish} borderColor={"#fedd64"}/>
                     <p style={{fontSize:2}}><br/></p>
+                </div>
+                <div style={{marginRight:"4%"}}>
+                    {this.props.isSpanish &&
+                    <ActivityButton
+                        style={{width:"15%"}} text={"Reading Practice"} route={"reading"} disabled={!this.props.isSpanish} isSpanish={this.props.isSpanish} borderColor={"#ff5757"}/>
+                    }
                 </div>
                 <div>
                     {this.props.isSpanish &&
                     <ActivityButton
-                        style={{width:"15%"}} text={"Pronunciation Practice"} route={"accent"} disabled={!this.props.isSpanish} isSpanish={this.props.isSpanish}/>
+                        style={{width:"15%"}} text={"Pronunciation Practice"} route={"accent"} disabled={!this.props.isSpanish} isSpanish={this.props.isSpanish} borderColor={"#fedd64"}/>
                     }
                 </div>
             </div>

@@ -10,13 +10,15 @@ import "./activity_button.css"
 const pictures = {
     "presentation" : "present.png",
     "conversation" : "converse.png",
-    "accent" : "live.png"
+    "accent" : "live.png",
+    "reading" : "reading.png"
 }
 
 const descriptions =  {
     "conversation" : "A recorded three minute conversation modeled after the AP exam interpersonal speaking section. Users are asked questions and respond in a conversation which is downloadable as an mp3.",
     "presentation" : "A recorded two minute presentation with a prompt modeled after the AP exam presentational speaking section. Users may download their presentation as an mp3 after the activity finishes.",
-    "accent" : "Users read words from curated sets aloud and Hablame evaluates their pronunciation using machine learning algorithms."
+    "accent" : "Users read words from curated sets aloud and Hablame evaluates their pronunciation using machine learning algorithms.",
+    "reading" : "Make any Spanish article an assignment with vocabulary builder, reading comprehension, and discussion components."
 }
 class ActivityButton extends Component {
     constructor(props) {
@@ -37,7 +39,12 @@ class ActivityButton extends Component {
                 action: 'started ' + this.props.route + ' French'
             });
         }
-        this.props.history.push('/' + this.props.route)
+        if (this.props.route === "reading") {
+            window.location.assign('https://textassign.org/')
+        }
+        else {
+            this.props.history.push('/' + this.props.route)
+        }
     }
 // <Button class="one" disabled={this.props.disabled} type={"secondary"}
 // style={{width:250, height:250, borderColor:"#fedd64", borderWidth:2, backgroundColor:"light-grey"}}
@@ -59,11 +66,11 @@ class ActivityButton extends Component {
         return (
             <div onClick={this.handleButtonClicked}>
                 <a>
-                <div className="flip-card">
+                <div className="flip-card" style={{borderColor:this.props.borderColor}}>
                     <div className="flip-card-inner">
                         <div className="flip-card-front">
                             { this.props.isSpanish && <div class="one" disabled={this.props.disabled}
-                            style={{width:246, height:230, borderColor:"#fedd64", borderWidth:2, backgroundColor:"white"}}
+                            style={{width:246, height:230, borderColor:this.props.borderColor, borderWidth:2, backgroundColor:"white"}}
                             onClick={this.handleButtonClicked}
                             ><p
                                 style={{
@@ -76,7 +83,7 @@ class ActivityButton extends Component {
                             </div>}
                                 {!this.props.isSpanish &&
                                 <div class="one" disabled={this.props.disabled}
-                                     style={{width:246, height:230, borderColor:"#002654", borderWidth:2, backgroundColor:"white"}}
+                                     style={{width:246, height:230, borderColor:this.props.borderColor, borderWidth:2, backgroundColor:"white"}}
                                      onClick={this.handleButtonClicked}
                                 ><p
                                     style={{
