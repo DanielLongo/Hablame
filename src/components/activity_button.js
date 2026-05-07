@@ -11,14 +11,16 @@ const pictures = {
     "presentation" : "present.png",
     "conversation" : "converse.png",
     "accent" : "live.png",
-    "reading" : "reading.png"
+    "reading" : "reading.png",
+    "live" : "live.png"
 }
 
 const descriptions =  {
     "conversation" : "A recorded three minute conversation modeled after the AP exam interpersonal speaking section. Users are asked questions and respond in a conversation which is downloadable as an mp3.",
     "presentation" : "A recorded two minute presentation with a prompt modeled after the AP exam presentational speaking section. Users may download their presentation as an mp3 after the activity finishes.",
     "accent" : "Users read words from curated sets aloud and Hablame evaluates their pronunciation using machine learning algorithms.",
-    "reading" : "Make any Spanish article an assignment with vocabulary builder, reading comprehension, and discussion components."
+    "reading" : "Make any Spanish article an assignment with vocabulary builder, reading comprehension, and discussion components.",
+    "live" : "A live, scenario-based speaking practice with an AI conversation partner. Choose a real-world scenario and converse out loud in real time."
 }
 class ActivityButton extends Component {
     constructor(props) {
@@ -42,6 +44,9 @@ class ActivityButton extends Component {
         if (this.props.route === "reading") {
             window.location.assign('https://textassign.org/')
         }
+        else if (this.props.route === "live") {
+            window.location.assign('https://live.hablame.org/')
+        }
         else {
             this.props.history.push('/' + this.props.route)
         }
@@ -64,7 +69,8 @@ class ActivityButton extends Component {
     render() {
         console.log("this.props.spanish", this.props)
         return (
-            <div onClick={this.handleButtonClicked}>
+            <div onClick={this.handleButtonClicked} style={{position:"relative", display:"inline-block"}}>
+                {this.props.isNew && <div className="new-badge">NEW</div>}
                 <a>
                 <div className="flip-card" style={{borderColor:this.props.borderColor}}>
                     <div className="flip-card-inner">

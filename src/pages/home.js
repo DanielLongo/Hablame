@@ -29,6 +29,16 @@ class Home extends Component {
             <div style={{}}>
             <div className={"background"}/>
                 {this.alert}
+            <div style={{
+                backgroundColor: "#fff8d6",
+                borderBottom: "1px solid #fedd64",
+                padding: "8px 16px",
+                textAlign: "center",
+                fontSize: 14,
+                color: "#333"
+            }}>
+                This is an updated version of Hablame. You can find the old one <a href={"https://hablame-76586.web.app/"} style={{fontWeight:"bold", textDecoration:"underline"}}>here</a>.
+            </div>
             <div>
                 <div>
 <div style={{marginBottom:"-2%"}}>
@@ -71,17 +81,17 @@ class Home extends Component {
                     <p style={{fontSize:2}}><br/></p>
                 </div>
                 <div style={{marginRight:"4%"}}>
-                    {this.props.isSpanish &&
-                    <ActivityButton
-                        style={{width:"15%"}} text={"Reading Practice"} route={"reading"} disabled={!this.props.isSpanish} isSpanish={this.props.isSpanish} borderColor={"#ff5757"}/>
-                    }
+                        <ActivityButton
+                            style={{width:"15%"}} text={"Live Speaking Practice"} route={"live"} isSpanish={this.props.isSpanish} borderColor={"#ff5757"} isNew={true}/>
                 </div>
+                {/*
                 <div>
                     {this.props.isSpanish &&
                     <ActivityButton
                         style={{width:"15%"}} text={"Pronunciation Practice"} route={"accent"} disabled={!this.props.isSpanish} isSpanish={this.props.isSpanish} borderColor={"#fedd64"}/>
                     }
                 </div>
+                */}
             </div>
             </div>
                 <div>
