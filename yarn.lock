@@ -844,10 +844,6 @@
   version "10.1.0"
   resolved "https://registry.yarnpkg.com/@csstools/normalize.css/-/normalize.css-10.1.0.tgz#f0950bba18819512d42f7197e56c518aa491cf18"
 
-"@hackingbeautyllc/react-mic-gold@^1.6.10":
-  version "1.6.10"
-  resolved "https://registry.yarnpkg.com/@hackingbeautyllc/react-mic-gold/-/react-mic-gold-1.6.10.tgz#a5f5ea6842540e568e37c9666c1571635938d6f6"
-
 "@hapi/address@2.x.x":
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/@hapi/address/-/address-2.1.4.tgz#5d67ed43f3fd41a69d4b9ff7b56e7c0d1d0a81e5"
