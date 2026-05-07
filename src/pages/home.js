@@ -30,6 +30,8 @@ class Home extends Component {
             <div className={"background"}/>
                 {this.alert}
             <div style={{
+                position: "relative",
+                zIndex: 10,
                 backgroundColor: "#fff8d6",
                 borderBottom: "1px solid #fedd64",
                 padding: "8px 16px",
